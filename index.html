@@ -12,22 +12,19 @@
             }
             
             #doge {
-                animation:breathe 1s infinite ease-in-out alternate;
-				-webkit-animation:breathe 1s infinite ease-in-out alternate;
-
-                animation:rotation 2s infinite linear;
-                -webkit-animation:rotation 2s infinite linear;
-                
-                animation-delay:8s;
-                -webkit-animation-delay:8s;
-                
-                height:90%;
                 display:block;
                 margin-left:auto;
                 margin-right:auto;
+                height:100%;
 				
-			    animation:rotandbreathe 4s infinite linear;
-				-webkit-animation:rotandbreathe 4s infinite linear;
+			    animation:rot 3s infinite linear;
+				-webkit-animation:rot 3s infinite linear;
+            }
+            
+            #dogeContainer {
+                animation:breathe 3s infinite ease;
+                -webkit-animation:breathe 3s infinite ease;
+                height:70%;
             }
             
             #surprise {
@@ -40,38 +37,27 @@
             }
             
             /* KEYFRAMES */
-			
-            @keyframes rotation {
-                from { transform : rotate(0deg); }
-                to { transform : rotate(359deg); }
+            
+            @keyframes rot {
+                from { transform:rotate(0deg); }
+                to { transform:rotate(359deg); }
             }
             
-            @-webkit-keyframes rotation {
-                from { -webkit-transform : rotate(0deg); }
-                to { -webkit-transform : rotate(359deg); }
+            @-webkit-keyframes rot {
+                from { -webkit-transform:rotate(0deg); }
+                to { -webkit-transform:rotate(359deg); }
             }
             
-			@-webkit-keyframes breathe { 
-				from { -webkit-transform: scale(1);}
-				to { -webkit-transform: scale(.5);}
-			}
+            @keyframes breathe {
+                0% { transform:scale(1); }
+                50% { transform:scale(0.5); }
+                100% {transform:scale(1); };
+            }
             
-            @-webkit-keyframes rotandbreathe {
-                0% {
-                    -webkit-transform:rotate(0deg) scale(1);
-                }
-                25% {
-                    -webkit-transform:rotate(80deg) scale(0.5);
-                }
-                50% {
-                    -webkit-transform:rotate(160deg) scale(1);
-                }
-                75% {
-                    -webkit-transform:rotate(240deg) scale(0.5);
-                }
-                100% {
-                    -webkit-transform:rotate(359deg) scale(1);
-                }
+            @-webkit-keyframes breathe {
+                0% { -webkit-transform:scale(1); }
+                50% { -webkit-transform:scale(0.5); }
+                100% { -webkit-transform:scale(1); }
             }
         </style>
     </head>
@@ -85,7 +71,7 @@
         
         <marquee><font size="7">Welcom to &lt;redacted&gt;</font></marquee>
         
-        <img id="doge" src="wowintensifies.gif">
+        <div id="dogeContainer"><img id="doge" src="wowintensifies.gif"></div>
         
         <div id="surprise" onClick="suddenlyBox()"></div>
         <script>
