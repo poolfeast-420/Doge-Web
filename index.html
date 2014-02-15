@@ -12,15 +12,15 @@
             }
             
             #doge {
+                
+                animation:breathe 1s infinite ease-in-out alternate;
+				-webkit-animation:breathe 1s infinite ease-in-out alternate;
+
                 animation:rotation 2s infinite linear;
                 -webkit-animation:rotation 2s infinite linear;
                 
                 animation-delay:8s;
                 -webkit-animation-delay:8s;
-				
-			    animation:breathe 1s infinite ease-in-out alternate;
-				-webkit-animation:breathe 1s infinite ease-in-out alternate;
-
             }
             
             #surprise {
@@ -59,7 +59,10 @@
         </audio>
         
         <marquee><font size="7">Welcom to &lt;redacted&gt;</font></marquee>
-        <img id="doge" src="wowintensifies.gif" alt="*wowintensifies" style="height:90%; display:block; margin-left:auto; margin-right:auto;">
+        
+        <marquee><img id="doge-head" src="favicon.png" style="height:10%; display:block;"></marquee>
+        
+        <img id="doge" src="wowintensifies.gif" style="height:90%; display:block; margin-left:auto; margin-right:auto;">
         
         <div id="surprise" onClick="suddenlyBox()"></div>
         <script>
