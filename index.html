@@ -15,6 +15,15 @@
                 -webkit-animation : rotation 2s infinite linear;
             }
             
+            #surprise {
+                position:absolute;
+                bottom:0px;
+                right:0px;
+                z-index:1;
+                height:50px;
+                width:50px;
+            }
+            
             /* KEYFRAMES */
             @keyframes rotation {
                 from { -webkit-transform : rotate(0deg)};
@@ -38,7 +47,9 @@
         <marquee><font size="7">Welcom to Vewbernk Cologe</font></marquee>
         <img id="doge" src="wowintensifies.gif" alt="*wowintensifies" style="height:90%; display:block; margin-left:auto; margin-right:auto;">
         
+        <div id="surprise" onClick="suddenlyBox()"></div>
         <script>
+            /* Background fading effect */
             var fade_effect = 2
             
             var gradient_effect = "horizontal"
@@ -199,6 +210,14 @@
             
             if (browserok) {
                 window.onload = setrandomcolor
+            }
+        </script>
+        
+        <script>
+            /* Surprise box */
+            
+            function suddenlyBox() {
+                alert("DICKS!");
             }
         </script>
     </body>
