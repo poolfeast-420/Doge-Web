@@ -11,20 +11,37 @@
                 font-family : "Comic Sans MS", "Comic Sans";
             }
             
+            #title {
+                opacity:0;
+                animation:fadein 5s 1 ease-out;
+                animation-fill-mode:forwards;
+                -webkit-animation:fadein 5s 1 ease-out;
+                -webkit-animation-fill-mode:forwards;
+                font-size:30pt;
+            }
+            
             #doge {
                 display:block;
                 margin-left:auto;
                 margin-right:auto;
                 height:100%;
 				
-			    animation:rot 3s infinite linear;
-				-webkit-animation:rot 3s infinite linear;
+			    animation:rot 3s infinite 8s linear;
+				-webkit-animation:rot 3s infinite 8s linear;
             }
             
             #dogeContainer {
-                animation:breathe 3s infinite ease;
-                -webkit-animation:breathe 3s infinite cubic-bezier(.35, 0, .49, .99);
+                animation:breathe 3s infinite 20s cubic-bezier(.35, 0, .49, .99);
+                -webkit-animation:breathe 3s infinite 20s cubic-bezier(.35, 0, .49, .99);
                 height:70%;
+            }
+            
+            #dogeContainerContainer {
+                opacity:0;
+                animation:fadein 5s 1 4s ease-out;
+                animation-fill-mode:forwards;
+                -webkit-animation:fadein 5s 1 4s ease-out;
+                -webkit-animation-fill-mode:forwards;
             }
             
             #surprise {
@@ -37,6 +54,16 @@
             }
             
             /* KEYFRAMES */
+            
+            @keyframes fadein {
+                from { visibility:none; }
+                to { visibility:visible; }
+            }
+            
+            @-webkit-keyframes fadein {
+                from { opacity:0; }
+                to { opacity:1; }
+            }
             
             @keyframes rot {
                 from { transform:rotate(0deg); }
@@ -63,15 +90,14 @@
     </head>
     <body style="overflow:hidden;">
         <audio loop="loop" autoplay="autoplay">
-            <source src="/audio/PORNOGROOVE.mp3" />
-            <source src="/audio/PORNOGROOVE.wav" />
-            <source src="/audio/PORNOGROOVE.ogg" />
-            <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
+            <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg" />
+            <source src="audio/PORNOGROOVE.wav" type="audio/wav" />
+            <source src="audio/PORNOGROOVE.ogg" type="audio/ogg" />
         </audio>
         
-        <marquee><font size="7">Welcom to &lt;redacted&gt;</font></marquee>
+        <marquee id="titleMarquee"><p id="title">Welcom to &lt;redacted&gt;</p></marquee>
         
-        <div id="dogeContainer"><img id="doge" src="wowintensifies.gif"></div>
+        <div id="dogeContainerContainer"><div id="dogeContainer"><img id="doge" src="wowintensifies.gif"></div></div>
         
         <div id="surprise" onClick="suddenlyBox()"></div>
         <script>
@@ -244,6 +270,8 @@
             }
             
             window.onload = start;
+            
+            document.getElementsByTagName('audio')[0].pause();
         </script>
     </body>
 </html>
