@@ -12,11 +12,13 @@
             }
             
             #doge {
-                animation:rotation 2s infinite linear;
-                -webkit-animation:rotation 2s infinite linear;
+                height:90%;
+                display:block;
+                margin-left:auto;
+                margin-right:auto;
                 
-                animation-delay:8s;
-                -webkit-animation-delay:8s;
+                animation:rotation 8s infinite linear;
+                -webkit-animation:rotation 8s infinite linear;
 				
 			    animation:breathe 1s infinite ease-in-out alternate;
 				-webkit-animation:breathe 1s infinite ease-in-out alternate;
@@ -59,7 +61,7 @@
         </audio>
         
         <marquee><font size="7">Welcom to &lt;redacted&gt;</font></marquee>
-        <img id="doge" src="wowintensifies.gif" alt="*wowintensifies" style="height:90%; display:block; margin-left:auto; margin-right:auto;">
+        <img id="doge" src="wowintensifies.gif" alt="*wowintensifies" style="">
         
         <div id="surprise" onClick="suddenlyBox()"></div>
         <script>
@@ -221,24 +223,14 @@
                 }
             }
             
-        </script>
-        
-        <script>
-            /* Surprise box */
-            
             function suddenlyBox() {
                 alert("DICKS!");
-            }
-            
-            function startspeedup() {
-                alert(document.getElementById('doge').style.animation);
             }
             
             function start() {
                 if (browserok) {
                     setrandomcolor();
                 }
-                //setTimeout("startspeedup", 1000);
             }
             
             window.onload = start;
