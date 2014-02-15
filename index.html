@@ -27,12 +27,9 @@
                 display:block;
                 margin-left:auto;
                 margin-right:auto;
-                
-                animation:rotation 8s infinite linear;
-                -webkit-animation:rotation 8s infinite linear;
 				
-			    animation:breathe 1s infinite ease-in-out alternate;
-				-webkit-animation:breathe 1s infinite ease-in-out alternate;
+			    animation:rotandbreathe 4s infinite ease-in-out alternate;
+				-webkit-animation:rotandbreathe 4s infinite ease-in-out alternate;
 
 >>>>>>> 054b708780099e30b12de04d4c0468ad8af79a47
             }
@@ -57,11 +54,37 @@
                 from { -webkit-transform : rotate(0deg); }
                 to { -webkit-transform : rotate(359deg); }
             }
+            
 			@-webkit-keyframes breathe { 
 				from { -webkit-transform: scale(1);}
 				to { -webkit-transform: scale(.5);}
 			}
-
+            
+            @-webkit-keyframes rotandbreathe {
+                0% {
+                    -webkit-transform:rotate(0deg);
+                    /*transform:scale(1);*/
+                }
+                25% {
+                    -webkit-transform:rotate(80deg);
+                    /*transform:scale(0.5);*/
+                }
+                50% {
+                    -webkit-transform:rotate(160deg);
+                    /*transform:scale(1);*/
+                }
+                75% {
+                    -webkit-transform:rotate(240deg);
+                    /*transform:scale(0.5);*/
+                }
+                100% {
+                    -webkit-transform:rotate(359deg);
+                }
+            }
+            
+            @-webkit-keyframes rotandbreathe {
+                
+            }
         </style>
     </head>
     <body style="overflow:hidden;">
