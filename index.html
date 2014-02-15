@@ -2,7 +2,7 @@
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
-        <title>Vewbernk Colage</title>
+        <title>&lt;redacted&gt;</title>
         <meta charset="utf8">
         <link rel="icon" type="image/png" href="favicon.png">
         <style type="text/css">
@@ -13,9 +13,10 @@
             
             #doge {
                 animation:rotation 2s infinite linear;
-                animation-delay:10s;
                 -webkit-animation:rotation 2s infinite linear;
-                -webkit-animation-delay:10s;
+                
+                animation-delay:1s;
+                -webkit-animation-delay:1s;
             }
             
             #surprise {
@@ -29,12 +30,12 @@
             
             /* KEYFRAMES */
             @keyframes rotation {
-                from { transform : rotate(0deg)};
+                from { transform : rotate(0deg); }
                 to { transform : rotate(359deg); }
             }
             
             @-webkit-keyframes rotation {
-                from { -webkit-transform : rotate(0deg)};
+                from { -webkit-transform : rotate(0deg); }
                 to { -webkit-transform : rotate(359deg); }
             }
         </style>
@@ -47,7 +48,7 @@
             <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
         </audio>
         
-        <marquee><font size="7">Welcom to Vewbernk Cologe</font></marquee>
+        <marquee><font size="7">Welcom to &lt;redacted&gt;</font></marquee>
         <img id="doge" src="wowintensifies.gif" alt="*wowintensifies" style="height:90%; display:block; margin-left:auto; margin-right:auto;">
         
         <div id="surprise" onClick="suddenlyBox()"></div>
@@ -88,8 +89,7 @@
                 var darkmax = 1
                 var lightmax = 80
             }
-            var hexc = new Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A',
-                    'B', 'C', 'D', 'E', 'F')
+            var hexc = new Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F')
             
             var newred
             var newgreen
@@ -211,9 +211,6 @@
                 }
             }
             
-            if (browserok) {
-                window.onload = setrandomcolor
-            }
         </script>
         
         <script>
@@ -222,6 +219,19 @@
             function suddenlyBox() {
                 alert("DICKS!");
             }
+            
+            function startspeedup() {
+                alert(document.getElementById('doge').style.animation);
+            }
+            
+            function start() {
+                if (browserok) {
+                    setrandomcolor();
+                }
+                //setTimeout("startspeedup", 1000);
+            }
+            
+            window.onload = start;
         </script>
     </body>
 </html>
