@@ -31,8 +31,8 @@
             }
             
             #dogeContainer {
-                animation:breathe 3s infinite 20s ease-in-out;
-                -webkit-animation:breathe 3s infinite 20s ease-in-out;
+                animation:breathe 3s infinite 14s ease-in-out;
+                -webkit-animation:breathe 3s infinite 14s ease-in-out;
                 height:70%;
             }
             
@@ -42,6 +42,20 @@
                 animation-fill-mode:forwards;
                 -webkit-animation:fadein 5s 1 4s ease-out;
                 -webkit-animation-fill-mode:forwards;
+            }
+            
+            #dogeMove1 {
+                position:absolute;
+                left:300px;
+                animation:updown 4s infinite 20s ease;
+                -webkit-animation:updown 4s infinite 20s ease;
+            }
+            
+            #dogeMove2 {
+                position:absolute;
+                right:300px;
+                animation:updown 3s infinite 23s ease;
+                -webkit-animation:updown 3s infinite 23s ease;
             }
             
             #surprise {
@@ -86,6 +100,17 @@
                 50% { -webkit-transform:scale(0.5); }
                 100% { -webkit-transform:scale(1); }
             }
+            
+            @keyframes updown {
+                from { top:200px; }
+                to { top:500px; }
+            }
+            
+            @-webkit-keyframes updown {
+                0% { top:150px; }
+                50% { top:500px; }
+                100% { top:150px; }
+            }
         </style>
     </head>
     <body style="overflow:hidden;">
@@ -97,7 +122,9 @@
         
         <marquee id="titleMarquee"><p id="title">Welcom to &lt;redacted&gt;</p></marquee>
         
-        <div id="dogeContainerContainer"><div id="dogeContainer"><img id="doge" src="wowintensifies.gif"></div></div>
+        <div id="dogeContainer2"><div id="dogeContainer"><img id="doge" src="wowintensifies.gif" alt="Intensifying Dogeness"></div></div>
+        
+        <img id="dogeMove1" src="doge-head.png" alt="much doge"><img id="dogeMove2" src="doge-head.png" alt="much doge">
         
         <div id="surprise" onClick="suddenlyBox()"></div>
         <script>
