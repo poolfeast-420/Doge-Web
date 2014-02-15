@@ -26,8 +26,8 @@
                 margin-right:auto;
                 height:100%;
 				
-			    animation:rot 3s infinite 8s linear;
-				-webkit-animation:rot 3s infinite 8s linear;
+			             animation:rot 3s infinite 8s linear;
+	            			-webkit-animation:rot 3s infinite 8s linear;
             }
             
             #dogeContainer {
@@ -114,6 +114,7 @@
         </style>
     </head>
     <body style="overflow:hidden;">
+        
         <audio loop="loop" autoplay="autoplay">
             <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg" />
             <source src="audio/PORNOGROOVE.wav" type="audio/wav" />
@@ -127,8 +128,52 @@
         <img id="dogeMove1" src="doge-head.png" alt="much doge"><img id="dogeMove2" src="doge-head.png" alt="much doge">
         
         <div id="surprise" onClick="suddenlyBox()"></div>
+        
+        <script>
+            /* record start time */
+         
+            var startTime;
+
+            function display() {
+            // later record end time
+            var endTime = new Date();
+
+            // time difference in ms
+            var timeDiff = endTime - startTime;
+
+            // strip the miliseconds
+            timeDiff /= 1000;
+
+            // get seconds
+            var seconds = Math.round(timeDiff % 60);
+
+            // remove seconds from the date
+            timeDiff = Math.floor(timeDiff / 60);
+  
+            // get minutes
+             var minutes = Math.round(timeDiff % 60);
+
+            // remove minutes from the date
+            timeDiff = Math.floor(timeDiff / 60);
+
+            // get hours
+            var hours = Math.round(timeDiff % 24);
+
+            // remove hours from the date
+            timeDiff = Math.floor(timeDiff / 24);
+
+            // the rest of timeDiff is number of days
+            var days = timeDiff;
+
+            $(".time").text(days + " days, " + hours + ":" + minutes + ":" + seconds);
+            setTimeout(display, 1000);
+            }
+
+        </script>
+
         <script>
             /* Background fading effect */
+            
             var fade_effect = 2
             
             var gradient_effect = "horizontal"
