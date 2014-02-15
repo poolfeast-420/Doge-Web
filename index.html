@@ -98,106 +98,106 @@
             
             function setrandomcolor() {
                 var range = (lightmax - darkmax)
-        		if (firsttime) {
-					newred = Math.ceil(range * Math.random()) + darkmax
-					newgreen = Math.ceil(range * Math.random()) + darkmax
-					newblue = Math.ceil(range * Math.random()) + darkmax
-					firsttime = false
-				}
-			
-				oldred = Math.ceil(range * Math.random()) + darkmax
-				oldgreen = Math.ceil(range * Math.random()) + darkmax
-				oldblue = Math.ceil(range * Math.random()) + darkmax
-			
-				stepred = newred - oldred
-				if (oldred > newred) {
-					stepred = 1
-				} else if (oldred < newred) {
-					stepred = -1
-				} else {
-					stepred = 0
-				}
-			
-				stepgreen = newgreen - oldgreen
-				if (oldgreen > newgreen) {
-					stepgreen = 1
-				} else if (oldgreen < newgreen) {
-					stepgreen = -1
-				} else {
-					stepgreen = 0
-				}
-			
-				stepblue = newblue - oldblue
-				if (oldblue > newblue) {
-					stepblue = 1
-				} else if (oldblue < newblue) {
-					stepblue = -1
-				} else {
-					stepblue = 0
-				}
-				fadebg()
-			}
-			
-			function fadebg() {
-				if (newred == oldred) {
-					stepred = 0
-				}
-				if (newgreen == oldgreen) {
-					stepgreen = 0
-				}
-				if (newblue == oldblue) {
-					stepblue = 0
-				}
-				newred += stepred
-				newgreen += stepgreen
-				newblue += stepblue
-			
-				if (stepred != 0 || stepgreen != 0 || stepblue != 0) {
-					redcol_1 = hexc[Math.floor(newred / 16)];
-					redcol_2 = hexc[newred % 16];
-					greencol_1 = hexc[Math.floor(newgreen / 16)];
-					greencol_2 = hexc[newgreen % 16];
-					bluecol_1 = hexc[Math.floor(newblue / 16)];
-					bluecol_2 = hexc[newblue % 16];
-					newcolor = "#" + redcol_1 + redcol_2 + greencol_1 + greencol_2
-						+ bluecol_1 + bluecol_2
-					if (ie5 && gradient_effect != "none") {
-						if (gradient_effect == "horizontal") {
-							gradient_effect = 1
-						}
-						if (gradient_effect == "vertical") {
-							gradient_effect = 0
-						}
-						greencol_1 = hexc[Math.floor(newred / 16)];
-						greencol_2 = hexc[newred % 16];
-						bluecol_1 = hexc[Math.floor(newgreen / 16)];
-						bluecol_2 = hexc[newgreen % 16];
-						redcol_1 = hexc[Math.floor(newblue / 16)];
-						redcol_2 = hexc[newblue % 16];
-						var newcolorCompl = "#" + redcol_1 + redcol_2 + greencol_1
-							+ greencol_2 + bluecol_1 + bluecol_2
-						document.body.style.filter = "progid:DXImageTransform.Microsoft.Gradient(startColorstr="
-							+ newcolorCompl
-							+ ", endColorstr="
-							+ newcolor
-							+ " GradientType=" + gradient_effect + ")"
-					} else {
-						document.bgColor = newcolor
-					}
-					var timer = setTimeout("fadebg()", speed);
-				} else {
-					clearTimeout(timer)
-					newred = oldred
-					newgreen = oldgreen
-					newblue = oldblue
-					oldcolor = newcolor
-					setrandomcolor()
-				}
-			}
-			
-			if (browserok) {
-				window.onload = setrandomcolor
-			}
-		</script>
-	</body>
+                if (firsttime) {
+                    newred = Math.ceil(range * Math.random()) + darkmax
+                    newgreen = Math.ceil(range * Math.random()) + darkmax
+                    newblue = Math.ceil(range * Math.random()) + darkmax
+                    firsttime = false
+                }
+            
+                oldred = Math.ceil(range * Math.random()) + darkmax
+                oldgreen = Math.ceil(range * Math.random()) + darkmax
+                oldblue = Math.ceil(range * Math.random()) + darkmax
+            
+                stepred = newred - oldred
+                if (oldred > newred) {
+                    stepred = 1
+                } else if (oldred < newred) {
+                    stepred = -1
+                } else {
+                    stepred = 0
+                }
+            
+                stepgreen = newgreen - oldgreen
+                if (oldgreen > newgreen) {
+                    stepgreen = 1
+                } else if (oldgreen < newgreen) {
+                    stepgreen = -1
+                } else {
+                    stepgreen = 0
+                }
+            
+                stepblue = newblue - oldblue
+                if (oldblue > newblue) {
+                    stepblue = 1
+                } else if (oldblue < newblue) {
+                    stepblue = -1
+                } else {
+                    stepblue = 0
+                }
+                fadebg()
+            }
+            
+            function fadebg() {
+                if (newred == oldred) {
+                    stepred = 0
+                }
+                if (newgreen == oldgreen) {
+                    stepgreen = 0
+                }
+                if (newblue == oldblue) {
+                    stepblue = 0
+                }
+                newred += stepred
+                newgreen += stepgreen
+                newblue += stepblue
+            
+                if (stepred != 0 || stepgreen != 0 || stepblue != 0) {
+                    redcol_1 = hexc[Math.floor(newred / 16)];
+                    redcol_2 = hexc[newred % 16];
+                    greencol_1 = hexc[Math.floor(newgreen / 16)];
+                    greencol_2 = hexc[newgreen % 16];
+                    bluecol_1 = hexc[Math.floor(newblue / 16)];
+                    bluecol_2 = hexc[newblue % 16];
+                    newcolor = "#" + redcol_1 + redcol_2 + greencol_1 + greencol_2
+                        + bluecol_1 + bluecol_2
+                    if (ie5 && gradient_effect != "none") {
+                        if (gradient_effect == "horizontal") {
+                            gradient_effect = 1
+                        }
+                        if (gradient_effect == "vertical") {
+                            gradient_effect = 0
+                        }
+                        greencol_1 = hexc[Math.floor(newred / 16)];
+                        greencol_2 = hexc[newred % 16];
+                        bluecol_1 = hexc[Math.floor(newgreen / 16)];
+                        bluecol_2 = hexc[newgreen % 16];
+                        redcol_1 = hexc[Math.floor(newblue / 16)];
+                        redcol_2 = hexc[newblue % 16];
+                        var newcolorCompl = "#" + redcol_1 + redcol_2 + greencol_1
+                            + greencol_2 + bluecol_1 + bluecol_2
+                        document.body.style.filter = "progid:DXImageTransform.Microsoft.Gradient(startColorstr="
+                            + newcolorCompl
+                            + ", endColorstr="
+                            + newcolor
+                            + " GradientType=" + gradient_effect + ")"
+                    } else {
+                        document.bgColor = newcolor
+                    }
+                    var timer = setTimeout("fadebg()", speed);
+                } else {
+                    clearTimeout(timer)
+                    newred = oldred
+                    newgreen = oldgreen
+                    newblue = oldblue
+                    oldcolor = newcolor
+                    setrandomcolor()
+                }
+            }
+            
+            if (browserok) {
+                window.onload = setrandomcolor
+            }
+        </script>
+    </body>
 </html>
