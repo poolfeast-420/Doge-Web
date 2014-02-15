@@ -15,8 +15,12 @@
                 animation:rotation 2s infinite linear;
                 -webkit-animation:rotation 2s infinite linear;
                 
-                animation-delay:1s;
-                -webkit-animation-delay:1s;
+                animation-delay:8s;
+                -webkit-animation-delay:8s;
+				
+				
+				-webkit-animation: breathe 5s infinite ease-in-out alternate;
+
             }
             
             #surprise {
@@ -29,6 +33,7 @@
             }
             
             /* KEYFRAMES */
+			
             @keyframes rotation {
                 from { transform : rotate(0deg); }
                 to { transform : rotate(359deg); }
@@ -38,6 +43,11 @@
                 from { -webkit-transform : rotate(0deg); }
                 to { -webkit-transform : rotate(359deg); }
             }
+			@-webkit-keyframes breathe { 
+				from { -webkit-transform: scale(1);}
+				to { -webkit-transform: scale(.5);}
+			}
+
         </style>
     </head>
     <body style="overflow:hidden;">
