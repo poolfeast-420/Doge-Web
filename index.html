@@ -34,8 +34,8 @@
                 margin-right:auto;
                 height:100%;
 				
-		animation:rot 3s infinite 8s linear;
-	        -webkit-animation:rot 3s infinite 8s linear;
+			    animation:rot 3s infinite 8s linear;
+	            -webkit-animation:rot 3s infinite 8s linear;
             }
             
             #dogeContainer {
@@ -141,7 +141,6 @@
          
             var startTime;
 
-            function display() {
             // later record end time
             var endTime = new Date();
 
@@ -171,10 +170,6 @@
 
             // the rest of timeDiff is number of days
             var days = timeDiff;
-
-            $(".time").text(days + " days, " + hours + ":" + minutes + ":" + seconds);
-            setTimeout(display, 1000);
-            }
 
         </script>
 
@@ -350,6 +345,9 @@
             }
             
             window.onload = start;
+            
+            document.getElementsByTagName('audio')[0].pause();
+        
         </script>
     </body>
 </html>
