@@ -5,15 +5,11 @@
         <title>Doge-Web</title>
         <meta charset="utf8">
         <link rel="icon" type="image/png" href="doge-head.png">
-        
-        <audio autoplay="autoplay" controls="controls" loop>
-            <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg"/>
-            <source src="audio/PORNOGROOVE.wav" type="audio/wav"/>
-            <source src="audio/PORNOGROOVE.ogg" type="audio/ogg"/>
-            <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
-        </audio>
-        
-        <style type="text/css">
+    </head>
+     <body style="overflow:hidden;">    
+    
+         <style type="text/css">
+            
             body, html {
                 height : 100%;
                 font-family : "Comic Sans MS", "Comic Sans";
@@ -29,22 +25,23 @@
             }
             
             #doge {
-                display:block;
                 margin-left:auto;
                 margin-right:auto;
+                margin-bottom: auto;
+                margin-top: auto;
                 height:100%;
 				
-			    animation:rot 3s infinite 8s linear;
-	            -webkit-animation:rot 3s infinite 8s linear;
+			    animation:rot 1s infinite 1s linear;
+	            -webkit-animation:rot 1s infinite 1s linear;
             }
             
-            #dogeContainer {
-                animation:breathe 3s infinite 14s ease-in-out;
-                -webkit-animation:breathe 3s infinite 14s ease-in-out;
-                height:70%;
+            #dogeBreathing {
+                animation:breathe 1s infinite 1s ease-in-out;
+                -webkit-animation:breathe 0.1s infinite 0.1s ease-in-out;
+                height:100%;
             }
             
-            #dogeContainer2 {
+            #dogeFadein {
                 opacity:0;
                 animation:fadein 5s 1 4s ease-out;
                 animation-fill-mode:forwards;
@@ -55,15 +52,15 @@
             #dogeMove1 {
                 position:absolute;
                 left:300px;
-                animation:updown 4s infinite 20s ease;
-                -webkit-animation:updown 4s infinite 20s ease;
+                animation:updown 1s infinite 1s ease;
+                -webkit-animation:updown 1s infinite 1s ease;
             }
             
             #dogeMove2 {
                 position:absolute;
                 right:300px;
-                animation:updown 3s infinite 23s ease;
-                -webkit-animation:updown 3s infinite 23s ease;
+                animation:updown 1s infinite 1s ease;
+                -webkit-animation:updown 1s infinite 1s ease;
             }
             
             #surprise {
@@ -120,28 +117,26 @@
                 100% { top:150px; }
             }
         </style>
-    
-    </head>
-   
-    <body style="overflow:hidden;">
         
-        <marquee id="titleMarquee"><p id="title">Wow</p></marquee>
+        <audio autoplay="autoplay" loop>
+            <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg"/>
+            <source src="audio/PORNOGROOVE.wav" type="audio/wav"/>
+            <source src="audio/PORNOGROOVE.ogg" type="audio/ogg"/>
+            <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
+        </audio>
         
-        <div id="dogeContainer2"><div id="dogeContainer">
+        <div id="dogeBreathing"><div id="dogeFadein">
         <img id="doge" src="wowintensifies.gif"></div></div>
         
         <img id="dogeMove1" src="doge-head.png" alt="much doge">
         <img id="dogeMove2" src="doge-head.png" alt="much doge">
-        
-        <div id="surprise" onClick="suddenlyBox()"></div>
-        
+         
         <script>
             
             /* record start time */
          
             var startTime;
 
-            function display() {
             // later record end time
             var endTime = new Date();
 
@@ -182,7 +177,7 @@
             
             var gradient_effect = "horizontal"
             
-            var speed = 20
+            var speed = 1
             
             var browserinfos = navigator.userAgent
             var ie4 = document.all && !document.getElementById
@@ -335,10 +330,6 @@
                 }
             }
             
-            function suddenlyBox() {
-                alert("DICKS!");
-            }
-            
             function start() {
                 if (browserok) {
                     setrandomcolor();
@@ -346,8 +337,6 @@
             }
             
             window.onload = start;
-            
-            document.getElementsByTagName('audio')[0].pause();
         
         </script>
     </body>
