@@ -2,9 +2,16 @@
 <!DOCTYPE HTML>
 <html lang="en">
     <head>
-        <title>&lt;redacted&gt;</title>
+        <title>Doge-Web</title>
         <meta charset="utf8">
         <link rel="icon" type="image/png" href="doge-head.png">
+        
+        <audio loop="loop" autoplay="autoplay">
+            <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg" />
+            <source src="audio/PORNOGROOVE.wav" type="audio/wav" />
+            <source src="audio/PORNOGROOVE.ogg" type="audio/ogg" />
+        </audio>
+        
         <style type="text/css">
             body, html {
                 height : 100%;
@@ -26,8 +33,8 @@
                 margin-right:auto;
                 height:100%;
 				
-			             animation:rot 3s infinite 8s linear;
-	            			-webkit-animation:rot 3s infinite 8s linear;
+			    animation:rot 3s infinite 8s linear;
+	            -webkit-animation:rot 3s infinite 8s linear;
             }
             
             #dogeContainer {
@@ -112,24 +119,23 @@
                 100% { top:150px; }
             }
         </style>
+    
     </head>
+   
     <body style="overflow:hidden;">
         
-        <audio loop="loop" autoplay="autoplay">
-            <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg" />
-            <source src="audio/PORNOGROOVE.wav" type="audio/wav" />
-            <source src="audio/PORNOGROOVE.ogg" type="audio/ogg" />
-        </audio>
+        <marquee id="titleMarquee"><p id="title">Wow</p></marquee>
         
-        <marquee id="titleMarquee"><p id="title">Welcom to &lt;redacted&gt;</p></marquee>
+        <div id="dogeContainer2"><div id="dogeContainer">
+        <img id="doge" src="wowintensifies.gif"></div></div>
         
-        <div id="dogeContainer2"><div id="dogeContainer"><img id="doge" src="wowintensifies.gif" alt="Intensifying Dogeness"></div></div>
-        
-        <img id="dogeMove1" src="doge-head.png" alt="much doge"><img id="dogeMove2" src="doge-head.png" alt="much doge">
+        <img id="dogeMove1" src="doge-head.png" alt="much doge">
+        <img id="dogeMove2" src="doge-head.png" alt="much doge">
         
         <div id="surprise" onClick="suddenlyBox()"></div>
         
         <script>
+            
             /* record start time */
          
             var startTime;
@@ -172,6 +178,7 @@
         </script>
 
         <script>
+            
             /* Background fading effect */
             
             var fade_effect = 2
@@ -344,6 +351,7 @@
             window.onload = start;
             
             document.getElementsByTagName('audio')[0].pause();
+        
         </script>
     </body>
 </html>
