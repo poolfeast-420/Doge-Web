@@ -87,7 +87,7 @@
             @keyframes breathe {
                 0% { transform:scale(1); }
                 50% { transform:scale(0.5); }
-                100% {transform:scale(1); };
+                100% {transform:scale(1); }
             }
 
             @-webkit-keyframes breathe {
@@ -111,48 +111,11 @@
     
     <body>
             <div id="dogeBreathing"><div id="dogeFadein">
-            <img id="doge" src="wowintensifies.gif"></div></div>
+            <img id="doge" src="wowintensifies.gif">
+            </div></div>
 
             <img id="dogeMove1" src="doge-head.png">
             <img id="dogeMove2" src="doge-head.png">
-
-        <script>
-            
-            /* Record Start Time */
-         
-                var startTime;
-
-                // later record end time
-                var endTime = new Date();
-
-                // time difference in ms
-                var timeDiff = endTime - startTime;
-
-                // strip the miliseconds
-                timeDiff /= 1000;
-
-                // get seconds
-                var seconds = Math.round(timeDiff % 60);
-
-                // remove seconds from the date
-                timeDiff = Math.floor(timeDiff / 60);
-
-                // get minutes
-                 var minutes = Math.round(timeDiff % 60);
-
-                // remove minutes from the date
-                timeDiff = Math.floor(timeDiff / 60);
-
-                // get hours
-                var hours = Math.round(timeDiff % 24);
-
-                // remove hours from the date
-                timeDiff = Math.floor(timeDiff / 24);
-
-                // the rest of timeDiff is number of days
-                var days = timeDiff;
-
-        </script>
 
         <script>
             
