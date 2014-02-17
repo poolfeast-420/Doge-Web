@@ -5,349 +5,331 @@
         <title>Doge-Web</title>
         <meta charset="utf8">
         <link rel="icon" type="image/png" href="doge-head.png">
-        
-        <audio autoplay="autoplay" controls="controls" loop>
+    
+        <audio autoplay="autoplay" loop>
             <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg"/>
             <source src="audio/PORNOGROOVE.wav" type="audio/wav"/>
             <source src="audio/PORNOGROOVE.ogg" type="audio/ogg"/>
             <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
         </audio>
-        
-        <style type="text/css">
-            body, html {
-                height : 100%;
-                font-family : "Comic Sans MS", "Comic Sans";
-            }
-            
-            #title {
-                opacity:0;
-                animation:fadein 5s 1 ease-out;
-                animation-fill-mode:forwards;
-                -webkit-animation:fadein 5s 1 ease-out;
-                -webkit-animation-fill-mode:forwards;
-                font-size:30pt;
-            }
-            
-            #doge {
-                display:block;
-                margin-left:auto;
-                margin-right:auto;
-                height:100%;
-				
-			    animation:rot 3s infinite 8s linear;
-	            -webkit-animation:rot 3s infinite 8s linear;
-            }
-            
-            #dogeContainer {
-                animation:breathe 3s infinite 14s ease-in-out;
-                -webkit-animation:breathe 3s infinite 14s ease-in-out;
-                height:70%;
-            }
-            
-            #dogeContainer2 {
-                opacity:0;
-                animation:fadein 5s 1 4s ease-out;
-                animation-fill-mode:forwards;
-                -webkit-animation:fadein 5s 1 4s ease-out;
-                -webkit-animation-fill-mode:forwards;
-            }
-            
-            #dogeMove1 {
-                position:absolute;
-                left:300px;
-                animation:updown 4s infinite 20s ease;
-                -webkit-animation:updown 4s infinite 20s ease;
-            }
-            
-            #dogeMove2 {
-                position:absolute;
-                right:300px;
-                animation:updown 3s infinite 23s ease;
-                -webkit-animation:updown 3s infinite 23s ease;
-            }
-            
-            #surprise {
-                position:absolute;
-                bottom:0px;
-                right:0px;
-                z-index:1;
-                height:50px;
-                width:50px;
-            }
-            
-            /* KEYFRAMES */
-            
-            @keyframes fadein {
-                from { visibility:none; }
-                to { visibility:visible; }
-            }
-            
-            @-webkit-keyframes fadein {
-                from { opacity:0; }
-                to { opacity:1; }
-            }
-            
-            @keyframes rot {
-                from { transform:rotate(0deg); }
-                to { transform:rotate(359deg); }
-            }
-            
-            @-webkit-keyframes rot {
-                from { -webkit-transform:rotate(0deg); }
-                to { -webkit-transform:rotate(359deg); }
-            }
-            
-            @keyframes breathe {
-                0% { transform:scale(1); }
-                50% { transform:scale(0.5); }
-                100% {transform:scale(1); };
-            }
-            
-            @-webkit-keyframes breathe {
-                0% { -webkit-transform:scale(1); }
-                50% { -webkit-transform:scale(0.5); }
-                100% { -webkit-transform:scale(1); }
-            }
-            
-            @keyframes updown {
-                from { top:200px; }
-                to { top:500px; }
-            }
-            
-            @-webkit-keyframes updown {
-                0% { top:150px; }
-                50% { top:500px; }
-                100% { top:150px; }
-            }
-        </style>
     
     </head>
-   
-    <body style="overflow:hidden;">
+    
+    <body style="overflow:hidden;">  
+    
+         <style type="text/css">
+            
+            /* Containers */
+
+                 body, html {
+                    height : 100%;
+                    margin-left: auto;
+                    margin-right: auto }
+                    
+                    font-family : "Comic Sans MS", "Comic Sans";
+                    }
+
+                #doge {
+                    display: block;
+                    margin-left: auto;
+                    margin-right: auto }
+             
+                    animation:rot 1s infinite 1s linear;
+                    -webkit-animation:rot s infinite 1s linear;
+                }
+
+                #dogeBreathing {
+                    margin-left: auto;
+                    margin-right: auto }
+                    
+                    animation:breathe 1s infinite 1s ease-in-out;
+                    -webkit-animation:breathe 0s infinite 0.1s ease-in-out;
+                }
+
+                #dogeFadein {
+                    margin-left: auto;
+                    margin-right: auto }
+                    
+                    opacity:0;
+                    animation:fadein 5s 1 4s ease-out;
+                    animation-fill-mode:forwards;
+                    -webkit-animation:fadein 5s 1 4s ease-out;
+                    -webkit-animation-fill-mode:forwards;
+                }
+
+                #dogeMove1 {
+                    position:absolute;
+                    left:300px;
+                    animation:updown 1s infinite 1s ease;
+                    -webkit-animation:updown 1s infinite 1s ease;
+                }
+
+                #dogeMove2 {
+                    position:absolute;
+                    right:300px;
+                    animation:updown 1s infinite 1s ease;
+                    -webkit-animation:updown 1s infinite 1s ease;
+                }
+
+            /* KEYFRAMES */
+            
+                @keyframes fadein {
+                    0% { visibility:none; }
+                    100% { visibility:visible; }
+                }
+
+                @-webkit-keyframes fadein {
+                    0% { opacity:0; }
+                    100% { opacity:1; }
+                }
+
+                @keyframes rot {
+                    0% { transform:rotate(0deg); }
+                    100% { transform:rotate(359deg); }
+                }
+
+                @-webkit-keyframes rot {
+                    0% { -webkit-transform:rotate(0deg); }
+                    100% { -webkit-transform:rotate(359deg); }
+                }
+
+                @keyframes breathe {
+                    0% { transform:scale(1); }
+                    50% { transform:scale(0.5); }
+                    100% {transform:scale(1); };
+                }
+
+                @-webkit-keyframes breathe {
+                    0% { -webkit-transform:scale(1); }
+                    50% { -webkit-transform:scale(0.5); }
+                    100% { -webkit-transform:scale(1); }
+                }
+
+                @keyframes updown {
+                    0% { top:200px; }
+                    100% { top:500px; }
+                }
+
+                @-webkit-keyframes updown {
+                    0% { top:150px; }
+                    50% { top:500px; }
+                    100% { top:150px; }
+                }
+        </style>
         
-        <marquee id="titleMarquee"><p id="title">Wow</p></marquee>
-        
-        <div id="dogeContainer2"><div id="dogeContainer">
-        <img id="doge" src="wowintensifies.gif"></div></div>
-        
-        <img id="dogeMove1" src="doge-head.png" alt="much doge">
-        <img id="dogeMove2" src="doge-head.png" alt="much doge">
-        
-        <div id="surprise" onClick="suddenlyBox()"></div>
-        
+            <div id="dogeBreathing"><div id="dogeFadein">
+            <img id="doge" src="wowintensifies.gif"></div></div>
+
+            <img id="dogeMove1" src="doge-head.png">
+            <img id="dogeMove2" src="doge-head.png">
+
         <script>
             
-            /* record start time */
+            /* Record Start Time */
          
-            var startTime;
+                var startTime;
 
-            // later record end time
-            var endTime = new Date();
+                // later record end time
+                var endTime = new Date();
 
-            // time difference in ms
-            var timeDiff = endTime - startTime;
+                // time difference in ms
+                var timeDiff = endTime - startTime;
 
-            // strip the miliseconds
-            timeDiff /= 1000;
+                // strip the miliseconds
+                timeDiff /= 1000;
 
-            // get seconds
-            var seconds = Math.round(timeDiff % 60);
+                // get seconds
+                var seconds = Math.round(timeDiff % 60);
 
-            // remove seconds from the date
-            timeDiff = Math.floor(timeDiff / 60);
-  
-            // get minutes
-             var minutes = Math.round(timeDiff % 60);
+                // remove seconds from the date
+                timeDiff = Math.floor(timeDiff / 60);
 
-            // remove minutes from the date
-            timeDiff = Math.floor(timeDiff / 60);
+                // get minutes
+                 var minutes = Math.round(timeDiff % 60);
 
-            // get hours
-            var hours = Math.round(timeDiff % 24);
+                // remove minutes from the date
+                timeDiff = Math.floor(timeDiff / 60);
 
-            // remove hours from the date
-            timeDiff = Math.floor(timeDiff / 24);
+                // get hours
+                var hours = Math.round(timeDiff % 24);
 
-            // the rest of timeDiff is number of days
-            var days = timeDiff;
+                // remove hours from the date
+                timeDiff = Math.floor(timeDiff / 24);
+
+                // the rest of timeDiff is number of days
+                var days = timeDiff;
 
         </script>
 
         <script>
             
-            /* Background fading effect */
+            /* Background Fading Effect */
             
-            var fade_effect = 2
-            
-            var gradient_effect = "horizontal"
-            
-            var speed = 20
-            
-            var browserinfos = navigator.userAgent
-            var ie4 = document.all && !document.getElementById
-            var ie5 = document.all && document.getElementById
-                    && !browserinfos.match(/Opera/)
-            var ns4 = document.layers
-            var ns6 = document.getElementById && !document.all
-            var opera = browserinfos.match(/Opera/)
-            var browserok = ie4 || ie5 || ns4 || ns6 || opera
-            
-            if (fade_effect == 1) {
-                var darkmax = 1
-                var lightmax = 127
-            }
-            if (fade_effect == 2) {
-                var darkmax = 127
-                var lightmax = 254
-            }
-            if (fade_effect == 3) {
-                var darkmax = 1
-                var lightmax = 254
-            }
-            if (fade_effect == 4) {
-                var darkmax = 190
-                var lightmax = 254
-            }
-            if (fade_effect == 5) {
-                var darkmax = 1
-                var lightmax = 80
-            }
-            var hexc = new Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F')
-            
-            var newred
-            var newgreen
-            var newblue
-            var oldred
-            var oldgreen
-            var oldblue
-            
-            var redcol_1
-            var redcol_2
-            var greencol_1
-            var greencol_2
-            var bluecol_1
-            var bluecol_2
-            var oldcolor
-            var newcolor
-            var firsttime = true
-            
-            var stepred = 1
-            var stepgreen = 1
-            var stepblue = 1
-            
-            function setrandomcolor() {
-                var range = (lightmax - darkmax)
-                if (firsttime) {
-                    newred = Math.ceil(range * Math.random()) + darkmax
-                    newgreen = Math.ceil(range * Math.random()) + darkmax
-                    newblue = Math.ceil(range * Math.random()) + darkmax
-                    firsttime = false
+                var fade_effect = 2
+
+                var gradient_effect = "horizontal"
+
+                var speed = 1
+
+                var browserinfos = navigator.userAgent
+                var ie4 = document.all && !document.getElementById
+                var ie5 = document.all && document.getElementById
+                        && !browserinfos.match(/Opera/)
+                var ns4 = document.layers
+                var ns6 = document.getElementById && !document.all
+                var opera = browserinfos.match(/Opera/)
+                var browserok = ie4 || ie5 || ns4 || ns6 || opera
+
+                if (fade_effect == 1) {
+                    var darkmax = 1
+                    var lightmax = 127
                 }
-            
-                oldred = Math.ceil(range * Math.random()) + darkmax
-                oldgreen = Math.ceil(range * Math.random()) + darkmax
-                oldblue = Math.ceil(range * Math.random()) + darkmax
-            
-                stepred = newred - oldred
-                if (oldred > newred) {
-                    stepred = 1
-                } else if (oldred < newred) {
-                    stepred = -1
-                } else {
-                    stepred = 0
+                if (fade_effect == 2) {
+                    var darkmax = 127
+                    var lightmax = 254
                 }
-            
-                stepgreen = newgreen - oldgreen
-                if (oldgreen > newgreen) {
-                    stepgreen = 1
-                } else if (oldgreen < newgreen) {
-                    stepgreen = -1
-                } else {
-                    stepgreen = 0
+                if (fade_effect == 3) {
+                    var darkmax = 1
+                    var lightmax = 254
                 }
-            
-                stepblue = newblue - oldblue
-                if (oldblue > newblue) {
-                    stepblue = 1
-                } else if (oldblue < newblue) {
-                    stepblue = -1
-                } else {
-                    stepblue = 0
+                if (fade_effect == 4) {
+                    var darkmax = 190
+                    var lightmax = 254
                 }
-                fadebg()
-            }
-            
-            function fadebg() {
-                if (newred == oldred) {
-                    stepred = 0
+                if (fade_effect == 5) {
+                    var darkmax = 1
+                    var lightmax = 80
                 }
-                if (newgreen == oldgreen) {
-                    stepgreen = 0
-                }
-                if (newblue == oldblue) {
-                    stepblue = 0
-                }
-                newred += stepred
-                newgreen += stepgreen
-                newblue += stepblue
-            
-                if (stepred != 0 || stepgreen != 0 || stepblue != 0) {
-                    redcol_1 = hexc[Math.floor(newred / 16)];
-                    redcol_2 = hexc[newred % 16];
-                    greencol_1 = hexc[Math.floor(newgreen / 16)];
-                    greencol_2 = hexc[newgreen % 16];
-                    bluecol_1 = hexc[Math.floor(newblue / 16)];
-                    bluecol_2 = hexc[newblue % 16];
-                    newcolor = "#" + redcol_1 + redcol_2 + greencol_1 + greencol_2
-                        + bluecol_1 + bluecol_2
-                    if (ie5 && gradient_effect != "none") {
-                        if (gradient_effect == "horizontal") {
-                            gradient_effect = 1
-                        }
-                        if (gradient_effect == "vertical") {
-                            gradient_effect = 0
-                        }
-                        greencol_1 = hexc[Math.floor(newred / 16)];
-                        greencol_2 = hexc[newred % 16];
-                        bluecol_1 = hexc[Math.floor(newgreen / 16)];
-                        bluecol_2 = hexc[newgreen % 16];
-                        redcol_1 = hexc[Math.floor(newblue / 16)];
-                        redcol_2 = hexc[newblue % 16];
-                        var newcolorCompl = "#" + redcol_1 + redcol_2 + greencol_1
-                            + greencol_2 + bluecol_1 + bluecol_2
-                        document.body.style.filter = "progid:DXImageTransform.Microsoft.Gradient(startColorstr="
-                            + newcolorCompl
-                            + ", endColorstr="
-                            + newcolor
-                            + " GradientType=" + gradient_effect + ")"
-                    } else {
-                        document.bgColor = newcolor
+                var hexc = new Array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F')
+
+                var newred
+                var newgreen
+                var newblue
+                var oldred
+                var oldgreen
+                var oldblue
+
+                var redcol_1
+                var redcol_2
+                var greencol_1
+                var greencol_2
+                var bluecol_1
+                var bluecol_2
+                var oldcolor
+                var newcolor
+                var firsttime = true
+
+                var stepred = 1
+                var stepgreen = 1
+                var stepblue = 1
+
+                function setrandomcolor() {
+                    var range = (lightmax - darkmax)
+                    if (firsttime) {
+                        newred = Math.ceil(range * Math.random()) + darkmax
+                        newgreen = Math.ceil(range * Math.random()) + darkmax
+                        newblue = Math.ceil(range * Math.random()) + darkmax
+                        firsttime = false
                     }
-                    var timer = setTimeout("fadebg()", speed);
-                } else {
-                    clearTimeout(timer)
-                    newred = oldred
-                    newgreen = oldgreen
-                    newblue = oldblue
-                    oldcolor = newcolor
-                    setrandomcolor()
+
+                    oldred = Math.ceil(range * Math.random()) + darkmax
+                    oldgreen = Math.ceil(range * Math.random()) + darkmax
+                    oldblue = Math.ceil(range * Math.random()) + darkmax
+
+                    stepred = newred - oldred
+                    if (oldred > newred) {
+                        stepred = 1
+                    } else if (oldred < newred) {
+                        stepred = -1
+                    } else {
+                        stepred = 0
+                    }
+
+                    stepgreen = newgreen - oldgreen
+                    if (oldgreen > newgreen) {
+                        stepgreen = 1
+                    } else if (oldgreen < newgreen) {
+                        stepgreen = -1
+                    } else {
+                        stepgreen = 0
+                    }
+
+                    stepblue = newblue - oldblue
+                    if (oldblue > newblue) {
+                        stepblue = 1
+                    } else if (oldblue < newblue) {
+                        stepblue = -1
+                    } else {
+                        stepblue = 0
+                    }
+                    fadebg()
                 }
-            }
-            
-            function suddenlyBox() {
-                alert("DICKS!");
-            }
-            
-            function start() {
-                if (browserok) {
-                    setrandomcolor();
+
+                function fadebg() {
+                    if (newred == oldred) {
+                        stepred = 0
+                    }
+                    if (newgreen == oldgreen) {
+                        stepgreen = 0
+                    }
+                    if (newblue == oldblue) {
+                        stepblue = 0
+                    }
+                    newred += stepred
+                    newgreen += stepgreen
+                    newblue += stepblue
+
+                    if (stepred != 0 || stepgreen != 0 || stepblue != 0) {
+                        redcol_1 = hexc[Math.floor(newred / 16)];
+                        redcol_2 = hexc[newred % 16];
+                        greencol_1 = hexc[Math.floor(newgreen / 16)];
+                        greencol_2 = hexc[newgreen % 16];
+                        bluecol_1 = hexc[Math.floor(newblue / 16)];
+                        bluecol_2 = hexc[newblue % 16];
+                        newcolor = "#" + redcol_1 + redcol_2 + greencol_1 + greencol_2
+                            + bluecol_1 + bluecol_2
+                        if (ie5 && gradient_effect != "none") {
+                            if (gradient_effect == "horizontal") {
+                                gradient_effect = 1
+                            }
+                            if (gradient_effect == "vertical") {
+                                gradient_effect = 0
+                            }
+                            greencol_1 = hexc[Math.floor(newred / 16)];
+                            greencol_2 = hexc[newred % 16];
+                            bluecol_1 = hexc[Math.floor(newgreen / 16)];
+                            bluecol_2 = hexc[newgreen % 16];
+                            redcol_1 = hexc[Math.floor(newblue / 16)];
+                            redcol_2 = hexc[newblue % 16];
+                            var newcolorCompl = "#" + redcol_1 + redcol_2 + greencol_1
+                                + greencol_2 + bluecol_1 + bluecol_2
+                            document.body.style.filter = "progid:DXImageTransform.Microsoft.Gradient(startColorstr="
+                                + newcolorCompl
+                                + ", endColorstr="
+                                + newcolor
+                                + " GradientType=" + gradient_effect + ")"
+                        } else {
+                            document.bgColor = newcolor
+                        }
+                        var timer = setTimeout("fadebg()", speed);
+                    } else {
+                        clearTimeout(timer)
+                        newred = oldred
+                        newgreen = oldgreen
+                        newblue = oldblue
+                        oldcolor = newcolor
+                        setrandomcolor()
+                    }
                 }
-            }
-            
-            window.onload = start;
-            
-            document.getElementsByTagName('audio')[0].pause();
-        
+
+                function start() {
+                    if (browserok) {
+                        setrandomcolor();
+                    }
+                }
+
+                window.onload = start;
+
         </script>
     </body>
 </html>
