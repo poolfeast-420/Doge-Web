@@ -13,153 +13,113 @@
             <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
         </audio>
     
-    </head>
-    
-    <body style="overflow:hidden;">  
-    
-         <style type="text/css">
-            
+        <style type="text/css">
             /* Containers */
+            body, html {
+                font-family : "Comic Sans MS", "Comic Sans";
+                overflow:hidden;
+            }
 
-                 body, html {
-                    height : 100%;
-                    margin-left: auto;
-                    margin-right: auto }
-                    
-                    font-family : "Comic Sans MS", "Comic Sans";
-                    }
+            #doge {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            
+                animation:rot 4s infinite 6s linear;
+                -webkit-animation:rot 4s infinite 6s linear;
+            }
 
-                #doge {
-                    display: block;
-                    margin-left: auto;
-                    margin-right: auto }
-             
-                    animation:rot 1s infinite 1s linear;
-                    -webkit-animation:rot s infinite 1s linear;
-                }
+            #dogeBreathing {
+                margin-left: auto;
+                margin-right: auto;
+                
+                animation:breathe 3s infinite 10s ease-in-out;
+                -webkit-animation:breathe 3s infinite 10s ease-in-out;
+            }
 
-                #dogeBreathing {
-                    margin-left: auto;
-                    margin-right: auto }
-                    
-                    animation:breathe 1s infinite 1s ease-in-out;
-                    -webkit-animation:breathe 0s infinite 0.1s ease-in-out;
-                }
+            #dogeFadein {
+                margin-left: auto;
+                margin-right: auto;
+                
+                opacity:0;
+                animation:fadein 5s 1 4s ease-out;
+                animation-fill-mode:forwards;
+                -webkit-animation:fadein 5s 1 4s ease-out;
+                -webkit-animation-fill-mode:forwards;
+            }
 
-                #dogeFadein {
-                    margin-left: auto;
-                    margin-right: auto }
-                    
-                    opacity:0;
-                    animation:fadein 5s 1 4s ease-out;
-                    animation-fill-mode:forwards;
-                    -webkit-animation:fadein 5s 1 4s ease-out;
-                    -webkit-animation-fill-mode:forwards;
-                }
+            #dogeMove1 {
+                position:absolute;
+                left:300px;
+                animation:updown 1s infinite 15s ease;
+                -webkit-animation:updown 1s infinite 15s ease;
+            }
 
-                #dogeMove1 {
-                    position:absolute;
-                    left:300px;
-                    animation:updown 1s infinite 1s ease;
-                    -webkit-animation:updown 1s infinite 1s ease;
-                }
-
-                #dogeMove2 {
-                    position:absolute;
-                    right:300px;
-                    animation:updown 1s infinite 1s ease;
-                    -webkit-animation:updown 1s infinite 1s ease;
-                }
+            #dogeMove2 {
+                position:absolute;
+                right:300px;
+                animation:updown 1s infinite 20s ease;
+                -webkit-animation:updown 1s infinite 20s ease;
+            }
+            
+            #dogeLeftSide {
+                
+            }
 
             /* KEYFRAMES */
             
-                @keyframes fadein {
-                    0% { visibility:none; }
-                    100% { visibility:visible; }
-                }
+            @keyframes fadein {
+                0% { visibility:none; }
+                100% { visibility:visible; }
+            }
 
-                @-webkit-keyframes fadein {
-                    0% { opacity:0; }
-                    100% { opacity:1; }
-                }
+            @-webkit-keyframes fadein {
+                0% { opacity:0; }
+                100% { opacity:1; }
+            }
 
-                @keyframes rot {
-                    0% { transform:rotate(0deg); }
-                    100% { transform:rotate(359deg); }
-                }
+            @keyframes rot {
+                0% { transform:rotate(0deg); }
+                100% { transform:rotate(359deg); }
+            }
 
-                @-webkit-keyframes rot {
-                    0% { -webkit-transform:rotate(0deg); }
-                    100% { -webkit-transform:rotate(359deg); }
-                }
+            @-webkit-keyframes rot {
+                0% { -webkit-transform:rotate(0deg); }
+                100% { -webkit-transform:rotate(359deg); }
+            }
 
-                @keyframes breathe {
-                    0% { transform:scale(1); }
-                    50% { transform:scale(0.5); }
-                    100% {transform:scale(1); };
-                }
+            @keyframes breathe {
+                0% { transform:scale(1); }
+                50% { transform:scale(0.5); }
+                100% {transform:scale(1); }
+            }
 
-                @-webkit-keyframes breathe {
-                    0% { -webkit-transform:scale(1); }
-                    50% { -webkit-transform:scale(0.5); }
-                    100% { -webkit-transform:scale(1); }
-                }
+            @-webkit-keyframes breathe {
+                0% { -webkit-transform:scale(1); }
+                50% { -webkit-transform:scale(0.5); }
+                100% { -webkit-transform:scale(1); }
+            }
 
-                @keyframes updown {
-                    0% { top:200px; }
-                    100% { top:500px; }
-                }
+            @keyframes updown {
+                0% { top:200px; }
+                100% { top:500px; }
+            }
 
-                @-webkit-keyframes updown {
-                    0% { top:150px; }
-                    50% { top:500px; }
-                    100% { top:150px; }
-                }
+            @-webkit-keyframes updown {
+                0% { top:150px; }
+                50% { top:500px; }
+                100% { top:150px; }
+            }
         </style>
-        
+    </head>
+    
+    <body>
             <div id="dogeBreathing"><div id="dogeFadein">
-            <img id="doge" src="wowintensifies.gif"></div></div>
+            <img id="doge" src="wowintensifies.gif">
+            </div></div>
 
             <img id="dogeMove1" src="doge-head.png">
             <img id="dogeMove2" src="doge-head.png">
-
-        <script>
-            
-            /* Record Start Time */
-         
-                var startTime;
-
-                // later record end time
-                var endTime = new Date();
-
-                // time difference in ms
-                var timeDiff = endTime - startTime;
-
-                // strip the miliseconds
-                timeDiff /= 1000;
-
-                // get seconds
-                var seconds = Math.round(timeDiff % 60);
-
-                // remove seconds from the date
-                timeDiff = Math.floor(timeDiff / 60);
-
-                // get minutes
-                 var minutes = Math.round(timeDiff % 60);
-
-                // remove minutes from the date
-                timeDiff = Math.floor(timeDiff / 60);
-
-                // get hours
-                var hours = Math.round(timeDiff % 24);
-
-                // remove hours from the date
-                timeDiff = Math.floor(timeDiff / 24);
-
-                // the rest of timeDiff is number of days
-                var days = timeDiff;
-
-        </script>
 
         <script>
             
