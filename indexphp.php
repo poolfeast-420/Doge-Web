@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!DOCTYPE HTML>
 <!--Wow, you're looking at the source code. You must be quite the hacker.-->
 <html lang="en">
@@ -272,7 +275,13 @@
             </div>
         </div>
 
-        <p id="wowtext">Wow</p>
+        <?php
+            if(isset($_GET['msg'])) {
+                $msg = $_GET['msg'];
+                $msg = htmlentities($msg);
+                echo "<p id=\"wowtext\">$msg</p>";
+            }
+        ?>
         <script type="text/javascript">
             var wowtext = document.getElementById("wowtext");
             var myRainbowSpan2 = new RainbowSpan(wowtext, 0, 360, 255, 50, 348);
