@@ -1,10 +1,12 @@
-<!--Wow, you're looking at the source code. You must be quite the hacker.-->
 <!DOCTYPE HTML>
+<!--Wow, you're looking at the source code. You must be quite the hacker.-->
 <html lang="en">
 
 <head>
     <title>Doge-Web</title>
-    <meta charset="utf8">
+    <meta charset="utf-8">
+    <meta name="Description" CONTENT="Wow">
+    <meta name="robots" content="noodp" />
     <link rel="icon" type="image/png" href="doge-head.png">
 
     <audio autoplay="autoplay" loop>
@@ -15,7 +17,6 @@
     </audio>
 
     <style type="text/css">
-        
         /* Containers */
         
         body, html {
@@ -29,10 +30,10 @@
         margin-right: auto;
         height: 100%;
         width: auto;
-        z-index: -1; position:relative
+        z-index: 100;
         
         animation:rot 4s infinite 6s linear;
-        -webkit-animation:rot 4s infinite 6s linear;
+        -webkit-animation:rot 3s infinite 6s linear;
         }
         
         #dogeBreathing {
@@ -43,7 +44,7 @@
         width: auto;
 
         animation:breathe 3s infinite 10s ease-in-out;
-        -webkit-animation:breathe 3s infinite 10s ease-in-out;
+        -webkit-animation:breathe 5s infinite 10s ease-in-out;
         }
         
         #dogeFadein {
@@ -65,7 +66,8 @@
         left: 0px;
         top: 0px;
         z-index: -100;
-        }
+        }   
+        
         
         /* KEYFRAMES */
         
@@ -103,7 +105,6 @@
     </style>
 
     <script type="text/javascript">
-        
         /* Rainbow Text */
         
         function toSpans(span) {
@@ -186,7 +187,6 @@
     </script>
 
     <script type="text/javascript">
-        
         /* Randomly Placed Doge Heads
         
         $(document).ready(function() {
@@ -254,7 +254,26 @@
     <div id="dogeBreathing">
         <div id="dogeFadein">
 
-            <img id="doge" src="wowintensifies.gif">
+            <img id="doge" src="wowintensifies.gif" alt="
+░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
+░░░░░░░░▌▒█░░░░░░░░░░░▄▀▒▌░░░
+░░░░░░░░▌▒▒█░░░░░░░░▄▀▒▒▒▐░░░
+░░░░░░░▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐░░░
+░░░░░▄▄▀▒░▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐░░░
+░░░▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌░░░ 
+░░▐▒▒▒▄▄▒▒▒▒░░░▒▒▒▒▒▒▒▀▄▒▒▌░░
+░░▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐░░
+░▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄▌░
+░▌░▒▄██▄▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▌░
+▀▒▀▐▄█▄█▌▄░▀▒▒░░░░░░░░░░▒▒▒▐░
+▐▒▒▐▀▐▀▒░▄▄▒▄▒▒▒▒▒▒░▒░▒░▒▒▒▒▌
+▐▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒▒▒░▒░▒░▒▒▐░
+░▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒░▒░▒░▒░▒▒▒▌░
+░▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▄▒▒▐░░
+░░▀▄▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▄▒▒▒▒▌░░
+░░░░▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀░░░
+░░░░░░▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀░░░░░
+░░░░░░░░░▒▒▒▒▒▒▒▒▒▒▀▀░░░░░░░░">
         </div>
     </div>
 
@@ -266,9 +285,8 @@
         myRainbowSpan2.timer = window.setInterval("myRainbowSpan2.moveRainbow()",
         myRainbowSpan2.speed);
     </script>
-    
+
     <script>
-        
         /* Background Fading Effect */
         
         var fade_effect = 2
