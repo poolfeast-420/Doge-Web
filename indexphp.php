@@ -1,6 +1,3 @@
-<?php
-?>
-
 <!DOCTYPE HTML>
 <!--Wow, you're looking at the source code. You must be quite the hacker.-->
 <html lang="en">
@@ -280,6 +277,8 @@
                 $msg = $_GET['msg'];
                 $msg = htmlentities($msg);
                 echo "<p id=\"wowtext\">$msg</p>";
+            } else {
+                echo "<p id=\"wowtext\">Wow</p>";
             }
         ?>
         <script type="text/javascript">
