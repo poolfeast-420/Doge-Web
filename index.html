@@ -41,7 +41,8 @@
                 margin-right: auto;
                 height: 100%;
                 width: auto;
-
+                z-index: -100;
+                
                 animation:breathe 3s infinite 10s ease-in-out;
                 -webkit-animation:breathe 5s infinite 10s ease-in-out;
             }
@@ -53,7 +54,8 @@
                 height: 100%;
                 width: auto;
                 opacity:0;
-        
+                z-index: -100;
+                
                 animation:fadein 5s 1 4s ease-out;
                 animation-fill-mode:forwards;
                 -webkit-animation:fadein 5s 1 4s ease-out;
@@ -66,14 +68,15 @@
                 top: 50px;
                 font-size:100pt;
                 z-index: -100;
+                
                 animation:marquee-left 3s infinite 3s linear;
                 -webkit-animation:marquee-left 3s infinite 3s linear;
             }
 
             #wowtextspin {
-                z-index: -100;
                 overflow: hidden;
                 position: relative;
+                z-index: -100;
                 
                 animation:spin 4s infinite linear;
                 -webkit-animation:spin 3s infinite linear;
