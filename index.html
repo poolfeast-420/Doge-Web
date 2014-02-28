@@ -38,7 +38,8 @@
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                height: 100vmin;
+                height: 100%;
+                width: 100%;
                 z-index: 100;
                 
                 animation:breathe 3s infinite 10s ease-in-out;
@@ -49,7 +50,8 @@
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                height: 100vmin;
+                height: 100%;
+                width: 100%;
                 opacity:0;
                 z-index: -100;
                 
@@ -62,9 +64,10 @@
             #wowtext {
                 position: absolute;
 	            font-size:100px;
+                overflow: hidden;
                 left: -100%;
                 top: 50%;
-	            transform: 			translateY(-50%);
+	            transform:translateY(-50%);
                 z-index: -100;
                 
                 animation:marquee-left 3s infinite 10s linear;
@@ -72,8 +75,9 @@
             }
 
             #wowtextspin {
+                overflow: hidden;
                 top: 50%;
-	            transform: 			translateY(-50%);
+	            transform:translateY(-50%);
                 position: absolute;
                 z-index: -100;
             }
