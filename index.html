@@ -31,8 +31,8 @@
                 width: auto;
                 z-index: 100;
         
-                animation:rot 4s infinite 6s linear;
-                -webkit-animation:rot 3s infinite 6s linear;
+                animation:spin 4s infinite 6s linear;
+                -webkit-animation:spin 3s infinite 6s linear;
             }
         
             #dogeBreathing {
@@ -62,18 +62,22 @@
         
             #wowtext {
                 position: absolute;
-                left: -100px;
-                top: 50%;
+                left: -100%;
+                top: 50px;
                 font-size:100pt;
                 z-index: -100;
                 animation:marquee-left 3s infinite 3s linear;
                 -webkit-animation:marquee-left 3s infinite 3s linear;
             }
 
-#wowtextspin {
- overflow: hidden;
- position: relative;
-}
+            #wowtextspin {
+                z-index: -100;
+                overflow: hidden;
+                position: relative;
+                
+                animation:spin 4s infinite linear;
+                -webkit-animation:spin 3s infinite linear;
+            }
         
             /* KEYFRAMES */
         
@@ -87,12 +91,12 @@
                 100% { opacity:1; }
             }
         
-            @keyframes rot {
+            @keyframes spin {
                 0% { transform:rotate(0deg); }
                 100% { transform:rotate(359deg); }
             }
         
-            @-webkit-keyframes rot {
+            @-webkit-keyframes spin {
                 0% { -webkit-transform:rotate(0deg); }
                 100% { -webkit-transform:rotate(359deg); }
             }
