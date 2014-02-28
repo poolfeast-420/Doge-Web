@@ -23,25 +23,23 @@
                 overflow: hidden;
             }
         
-            #doge {
+            #dogespin {
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                height: 100%;
-                width: auto;
+                height: 100vmin;
                 z-index: 100;
         
-                animation:spin 4s infinite 6s linear;
-                -webkit-animation:spin 3s infinite 6s linear;
+                animation:spin 4s infinite 7s linear;
+                -webkit-animation:spin 3s infinite 7s linear;
             }
         
             #dogeBreathing {
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                height: 100%;
-                width: auto;
-                z-index: -100;
+                height: 100vmin;
+                z-index: 100;
                 
                 animation:breathe 3s infinite 10s ease-in-out;
                 -webkit-animation:breathe 5s infinite 10s ease-in-out;
@@ -51,8 +49,7 @@
                 display: block;
                 margin-left: auto;
                 margin-right: auto;
-                height: 100%;
-                width: auto;
+                height: 100vmin;
                 opacity:0;
                 z-index: -100;
                 
@@ -64,22 +61,21 @@
         
             #wowtext {
                 position: absolute;
+	            font-size:100px;
                 left: -100%;
-                top: 50px;
-                font-size:100pt;
+                top: 50%;
+	            transform: 			translateY(-50%);
                 z-index: -100;
                 
-                animation:marquee-left 3s infinite 3s linear;
-                -webkit-animation:marquee-left 3s infinite 3s linear;
+                animation:marquee-left 3s infinite 10s linear;
+                -webkit-animation:marquee-left 3s infinite 10s linear;
             }
 
             #wowtextspin {
-                overflow: hidden;
-                position: relative;
+                top: 50%;
+	            transform: 			translateY(-50%);
+                position: absolute;
                 z-index: -100;
-                
-                animation:spin 4s infinite linear;
-                -webkit-animation:spin 3s infinite linear;
             }
         
             /* KEYFRAMES */
@@ -215,31 +211,11 @@
             
                 var canvas = $("#screen1");
                 var context = canvas.get(0).getContext("2d");
-            
-                //Button Logic
-                var playAnim = true;
-                var startButton = $("#startAnim");
-                var stopButton = $("#stopAnim");
-                var clearButton = $("#clearAll");
         
-                startButton.hide();
-                startButton.click(function() {
-                    $(this).hide();
-                    stopButton.show();
                     playAnim = true;
                     animate();							
                 });
-        
-                stopButton.click(function() {
-                    $(this).hide();
-                    startButton.show();
-                    playAnim = false;
-                });
-        
-                clearButton.click(function() {
-                    context.clearRect(0, 0, canvas.width(), canvas.height());
-                });
-        
+
                 var x = 0;
                 var y = 0;
                 var r = 0;
@@ -255,12 +231,9 @@
                 function animate() {
                     x = Math.floor(Math.random()*canvas.width()) - 50;
                     y = Math.floor(Math.random()*canvas.height()) - 50;					
-                    r = Math.floor(Math.random()*255);
-                    g = Math.floor(Math.random()*255);
-                    b = Math.floor(Math.random()*255);
                     sizeXY = Math.floor(Math.random()*100);
                     context.fillStyle = "rgba(" + r + "," + g + "," + b + ", 0.5)";
-                    context.fillRect(x, y, sizeXY, sizeXY);
+                    context.backgroundImage(/doge-head.png);
                     if(x > canvas.width()) {
                         x = 0;
                     };
@@ -273,8 +246,9 @@
     <body>
 
         <div id="dogeBreathing">
+           
             <div id="dogeFadein">
-                <img id="doge" src="wowintensifies.gif" alt="
+                <img id="dogespin" src="wowintensifies.gif" alt="
 ░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
 ░░░░░░░░▌▒█░░░░░░░░░░░▄▀▒▌░░░
 ░░░░░░░░▌▒▒█░░░░░░░░▄▀▒▒▒▐░░░
@@ -300,9 +274,9 @@
         <div id="Wowtextspin">
             <p id="wowtext">Wow</p>
             <script type="text/javascript">
-            var wowtext =           document.getElementById("wowtext");
-            var myRainbowSpan2 = new RainbowSpan(wowtext, 0, 360, 255, 50, 348);
-            myRainbowSpan2.timer = window.setInterval("myRainbowSpan2.moveRainbow()", myRainbowSpan2.speed);
+            var wowtext=document.getElementById("wowtext");
+            var myRainbowSpan2=new RainbowSpan(wowtext, 0, 360, 255, 50, 18);
+            myRainbowSpan2.timer=window.setInterval("myRainbowSpan2.moveRainbow()", myRainbowSpan2.speed);
             </script>
         <div>
 
