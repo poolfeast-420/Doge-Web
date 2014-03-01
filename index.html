@@ -8,7 +8,7 @@
         <meta name="robots" content="noodp" />
         <link rel="icon" type="image/png" href="doge-head.png">
 
-        <audio autoplay="autoplay" loop>
+        <audio loop>
             <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg" />
             <source src="audio/PORNOGROOVE.wav" type="audio/wav" />
             <source src="audio/PORNOGROOVE.ogg" type="audio/ogg" />
@@ -61,15 +61,12 @@
                 -webkit-animation-fill-mode:forwards;
             }
         
-            #wowtext {
+            .wowtext {
                 position: absolute;
 	            font-size:70pt;
                 margin:0;
                 left: -100%;
                 z-index: -100;
-                
-                animation:marquee-left 3s infinite 9s linear;
-                -webkit-animation:marquee-left 3s infinite 9s linear;
             }
         
             /* KEYFRAMES */
@@ -199,7 +196,7 @@
         </script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script type="text/javascript">
-            /* Randomly Placed Doge Heads */
+            /* Randomly Placed Doge Heads
         
             $(document).ready(function() {
             
@@ -246,13 +243,14 @@
             </div>
         </div>
         
-        <p id="wowtext">Wow</p>
+        <div id="wowContainer"></div>
+        
+        <!--<p class="wowtext">Wow</p>
         <script type="text/javascript">
             var wowtext=document.getElementById("wowtext");
             var myRainbowSpan2=new RainbowSpan(wowtext, 0, 360, 255, 50, 18);
             myRainbowSpan2.timer=window.setInterval("myRainbowSpan2.moveRainbow()", myRainbowSpan2.speed);
-        </script>
-        <div>
+        </script>-->
 
         <script>
             /* Background Fading Effect */
@@ -321,7 +319,7 @@
                     newred = Math.ceil(range * Math.random()) + darkmax
                     newgreen = Math.ceil(range * Math.random()) + darkmax
                     newblue = Math.ceil(range * Math.random()) + darkmax
-                        firsttime = false
+                    firsttime = false
                 }
                 
                 oldred = Math.ceil(range * Math.random()) + darkmax
@@ -413,27 +411,57 @@
                 }
             }
             
-            // Sets a random height for an item on the page.
-            function randomHeight(item) {
-                var random = Math.floor(Math.random() * 100) + 1;
-                random = random + "%";
+            // Sets a random height for wows on the page.
+            function randomHeight() {
+                var wows = document.getElementsByClassName('wowtext');
                 
-                document.getElementById(item).style.top = random;
-                document.getElementById('count').innerHTML = document.getElementById('count').innerHTML + random + " ";
+                for(var i = 0; i<wows.length; i++) {
+                    var random = Math.floor(Math.random() * 100) + 1;
+                    random = random + "%";
+                    wows[i].style.top = random;
+                }
                 
                 setTimeout(function() {
                     randomHeight('wowtext');
                 }, 3000);
             }
             
+            var wowCallCount = 0;
+            
+            function allTheWows() {
+                var maxWows = 15;
+                wowCallCount++;
+                
+                if(wowCallCount > maxWows) {
+                    window.clearInterval(wowInterval);
+                } else {
+                    var container = document.getElementById('wowContainer');
+                    var wowID = "wowtext" + wowCallCount;
+                    var speed = Math.floor(Math.random() * (8 - 4 + 1)) + 4;
+
+                    container.innerHTML = container.innerHTML + "<p class=\"wowtext\" id=\"" + wowID + "\">Wow</p>";
+                    var wowtext = document.getElementById(wowID);
+                    wowtext.style.setProperty("animation", "marquee-left " + speed + " infinite linear");
+                    wowtext.style.setProperty("-webkit-animation", "marquee-left " + speed + " infinite linear");
+
+                    /* Yeah, I fucked shit up. I'll try to fix it ASAP. For now, no rainbows.
+                    var wowtext = document.getElementById(wowID);
+                    var myRainbowSpan = new RainbowSpan2(wowtext, 0, 360, 255, 50, 18);
+                    myRainbowSpan2.timer = window.setInterval("myRainbowSpan2.moveRainbow()", myRainbowSpan2.speed);*/
+                }
+            }
+            
+            var wowInterval;
             function start() {
                 if (browserok) {
                     setrandomcolor();
                     setTimeout(function() {
-                        randomHeight('wowtext');
+                        randomHeight();
                     }, 10000);
+                    wowInterval = setInterval(function() {
+                        allTheWows();
+                    }, 6000);
                 }
-                
             }
             
             window.onload = start;
