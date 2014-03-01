@@ -12,6 +12,7 @@
             <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg" />
             <source src="audio/PORNOGROOVE.wav" type="audio/wav" />
             <source src="audio/PORNOGROOVE.ogg" type="audio/ogg" />
+            <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
         </audio>
 
         <style type="text/css">
@@ -62,23 +63,13 @@
         
             #wowtext {
                 position: absolute;
-	            font-size:100px;
-                overflow: hidden;
+	            font-size:70pt;
+                margin:0;
                 left: -100%;
-                top: 50%;
-	            transform:translateY(-50px);
                 z-index: -100;
                 
-                animation:marquee-left 3s infinite 10s linear;
-                -webkit-animation:marquee-left 3s infinite 10s linear;
-            }
-
-            #wowtextspin {
-                overflow: hidden;
-                top: 50%;
-	            transform:translateY(-50px);
-                position: absolute;
-                z-index: -100;
+                animation:marquee-left 3s infinite 9s linear;
+                -webkit-animation:marquee-left 3s infinite 9s linear;
             }
         
             /* KEYFRAMES */
@@ -116,7 +107,7 @@
             }
             
             @keyframes marquee-left {
-                0% { left:-100%; }
+                0% { right:100%; }
                 100% { left: 100%; }
             }
             
@@ -247,26 +238,26 @@
     </head>
 
     <body>
+        <div id="count"></div>
 
         <div id="dogeBreathing">
-           
             <div id="dogeFadein">
                 <img id="dogespin" src="wowintensifies.gif" alt="
 ░░░░░░░░░▄░░░░░░░░░░░░░░▄░░░░
 ░░░░░░░░▌▒█░░░░░░░░░░░▄▀▒▌░░░
-░░░░░░░░▌▒▒█░░░░░░░░▄▀▒▒▒▐░░░
-░░░░░░░▐▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒▐░░░
-░░░░░▄▄▀▒░▒▒▒▒▒▒▒▒▒█▒▒▄█▒▐░░░
+░░░░░░░░▌▒▒█░░░░░░░░▄▀▒▒▒�?░░░
+░░░░░░░�?▄▀▒▒▀▀▀▀▄▄▄▀▒▒▒▒▒�?░░░
+░░░░░▄▄▀▒░▒▒▒▒▒▒▒▒▒█▒▒▄█▒�?░░░
 ░░░▄▀▒▒▒░░░▒▒▒░░░▒▒▒▀██▀▒▌░░░ 
-░░▐▒▒▒▄▄▒▒▒▒░░░▒▒▒▒▒▒▒▀▄▒▒▌░░
-░░▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒▐░░
-░▐░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄▌░
+░░�?▒▒▒▄▄▒▒▒▒░░░▒▒▒▒▒▒▒▀▄▒▒▌░░
+░░▌░░▌█▀▒▒▒▒▒▄▀█▄▒▒▒▒▒▒▒█▒�?░░
+░�?░░░▒▒▒▒▒▒▒▒▌██▀▒▒░░░▒▒▒▀▄▌░
 ░▌░▒▄██▄▒▒▒▒▒▒▒▒▒░░░░░░▒▒▒▒▌░
-▀▒▀▐▄█▄█▌▄░▀▒▒░░░░░░░░░░▒▒▒▐░
-▐▒▒▐▀▐▀▒░▄▄▒▄▒▒▒▒▒▒░▒░▒░▒▒▒▒▌
-▐▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒▒▒░▒░▒░▒▒▐░
+▀▒▀�?▄█▄█▌▄░▀▒▒░░░░░░░░░░▒▒▒�?░
+�?▒▒�?▀�?▀▒░▄▄▒▄▒▒▒▒▒▒░▒░▒░▒▒▒▒▌
+�?▒▒▒▀▀▄▄▒▒▒▄▒▒▒▒▒▒▒▒░▒░▒░▒▒�?░
 ░▌▒▒▒▒▒▒▀▀▀▒▒▒▒▒▒░▒░▒░▒░▒▒▒▌░
-░▐▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▄▒▒▐░░
+░�?▒▒▒▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▒▄▒▒�?░░
 ░░▀▄▒▒▒▒▒▒▒▒▒▒▒░▒░▒░▒▄▒▒▒▒▌░░
 ░░░░▀▄▒▒▒▒▒▒▒▒▒▒▄▄▄▀▒▒▒▒▄▀░░░
 ░░░░░░▀▄▄▄▄▄▄▀▀▀▒▒▒▒▒▄▄▀░░░░░
@@ -274,21 +265,20 @@
             </div>
         </div>
         
-        <div id="Wowtextspin">
-            <p id="wowtext">Wow</p>
-            <script type="text/javascript">
+        <p id="wowtext">Wow</p>
+        <script type="text/javascript">
             var wowtext=document.getElementById("wowtext");
             var myRainbowSpan2=new RainbowSpan(wowtext, 0, 360, 255, 50, 18);
             myRainbowSpan2.timer=window.setInterval("myRainbowSpan2.moveRainbow()", myRainbowSpan2.speed);
-            </script>
+        </script>
         <div>
 
-        <script type="text/javascript">
+        <script>
             /* Background Fading Effect */
         
             var fade_effect = 2
         
-            var gradient_effect = "none"
+            var gradient_effect = "horizontal"
         
             var speed = 1
         
@@ -340,9 +330,9 @@
             var newcolor
             var firsttime = true
             
-            var stepred = 100
-            var stepgreen = 100
-            var stepblue = 100
+            var stepred = 1
+            var stepgreen = 1
+            var stepblue = 1
             
             function setrandomcolor() {
                 var range = (lightmax - darkmax)
@@ -442,10 +432,27 @@
                 }
             }
             
+            // Sets a random height for an item on the page.
+            function randomHeight(item) {
+                var random = Math.floor(Math.random() * 100) + 1;
+                random = random + "%";
+                
+                document.getElementById(item).style.top = random;
+                document.getElementById('count').innerHTML = document.getElementById('count').innerHTML + random + " ";
+                
+                setTimeout(function() {
+                    randomHeight('wowtext');
+                }, 3000);
+            }
+            
             function start() {
                 if (browserok) {
                     setrandomcolor();
-                    }
+                    setTimeout(function() {
+                        randomHeight('wowtext');
+                    }, 10000);
+                }
+                
             }
             
             window.onload = start;
