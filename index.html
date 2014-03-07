@@ -8,10 +8,17 @@
         <meta name="robots" content="noodp" />
         <link rel="icon" type="image/png" href="doge-head.png">
 
-        <audio loop>
+        <audio name="backgroundMusic" loop>
             <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg" />
             <source src="audio/PORNOGROOVE.wav" type="audio/wav" />
             <source src="audio/PORNOGROOVE.ogg" type="audio/ogg" />
+            <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
+        </audio>
+        
+        <audio name="backgroundMusic" loop>
+            <source src="audio/hey.mp3" type="audio/mpeg" />
+            <source src="audio/hey.wav" type="audio/wav" />
+            <source src="audio/hey.ogg" type="audio/ogg" />
             <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
         </audio>
 
@@ -451,6 +458,14 @@
                 }
             }
             
+            // Plays a random song: to add a song, put it after the other song/s and add name="backgroundMusic" to the audio tag.
+            function playSong() {
+                var songs = document.getElementsByName('backgroundMusic');
+                var rand = Math.floor(Math.random() * songs.length);
+                console.log(rand);
+                songs.item(rand).play();
+            }
+            
             var wowInterval;
             function start() {
                 if (browserok) {
@@ -461,6 +476,7 @@
                     wowInterval = setInterval(function() {
                         allTheWows();
                     }, 6000);
+                    playSong();
                 }
             }
             
