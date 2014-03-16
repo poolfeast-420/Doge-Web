@@ -8,20 +8,6 @@
         <meta name="robots" content="noodp" />
         <link rel="icon" type="image/png" href="doge-head.png">
 
-        <audio name="backgroundMusic" loop>
-            <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg" />
-            <source src="audio/PORNOGROOVE.wav" type="audio/wav" />
-            <source src="audio/PORNOGROOVE.ogg" type="audio/ogg" />
-            <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
-        </audio>
-        
-        <audio name="backgroundMusic" loop>
-            <source src="audio/hey.mp3" type="audio/mpeg" />
-            <source src="audio/hey.wav" type="audio/wav" />
-            <source src="audio/hey.ogg" type="audio/ogg" />
-            <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
-        </audio>
-
         <style type="text/css">
             /* Containers */
             
@@ -66,6 +52,31 @@
                 animation-fill-mode:forwards;
                 -webkit-animation:fadein 5s 1 4s ease-out;
                 -webkit-animation-fill-mode:forwards;
+            }
+            
+            #controlBox {
+                display:none;
+                top:20%;
+                left:30%;
+                width:30%;
+                min-width:400px;
+                position:absolute;
+                border:3px solid black;
+                border-radius:10px;
+                background-color:#CCC;
+                padding:30px;
+                z-index:1000;
+            }
+            
+            #secretBox {
+                position:absolute;
+                display:block;
+                bottom:0px;
+                right:0px;
+                width:50px;
+                height:50px;
+                cursor:pointer;
+                background-color:#F00;
             }
         
             .wowtext {
@@ -251,6 +262,24 @@
         </div>
         
         <div id="wowContainer"></div>
+        
+        <div id="controlBox">
+            <audio name="backgroundMusic" loop controls>
+                <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg" />
+                <source src="audio/PORNOGROOVE.wav" type="audio/wav" />
+                <source src="audio/PORNOGROOVE.ogg" type="audio/ogg" />
+                <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
+            </audio>
+
+            <audio name="backgroundMusic" loop controls>
+                <source src="audio/hey.mp3" type="audio/mpeg" />
+                <source src="audio/hey.wav" type="audio/wav" />
+                <source src="audio/hey.ogg" type="audio/ogg" />
+                <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
+            </audio>
+        </div>
+        
+        <a id="secretBox"></a>
         
         <!--<p class="wowtext">Wow</p>
         <script type="text/javascript">
@@ -465,6 +494,13 @@
                 console.log(rand);
                 songs.item(rand).play();
             }
+            
+            // Secret control box stuff
+            $('document').ready(function() {
+                $('#secretBox').click(function() {
+                    $('#controlBox').fadeToggle();
+                });
+            });
             
             var wowInterval;
             function start() {
