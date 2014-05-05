@@ -2,7 +2,7 @@
 <!--Wow, you're looking at the source code. You must be quite the hacker.-->
 <html lang="en">
     <head>
-        <title>Doge-Web Poop</title>
+        <title>Doge-Web</title>
         <meta charset="utf-8">
         <meta name="Description" CONTENT="Wow">
         <meta name="robots" content="noodp" />
@@ -213,41 +213,22 @@
         </script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
         <script type="text/javascript">
-            /* Randomly Placed Doge Heads
-        
-            $(document).ready(function() {
+            /* Title Changing */
             
-                var canvas = $("#screen1");
-                var context = canvas.get(0).getContext("2d");
-        
-                    playAnim = true;
-                    animate();							
-                });
+            $(function(){
+                setInterval(oneSecondFunction, 1000);
+            });
 
-                var x = 0;
-                var y = 0;
-                var r = 0;
-                var g = 0;
-                var b = 0;
-                var sizeXY = 0;
-        
-                context.shadowBlur = 20;
-                context.shadowColor = "rgba(0, 0, 0, 0.5)";
-        
-                animate();
-        
-                function animate() {
-                    x = Math.floor(Math.random()*canvas.width()) - 50;
-                    y = Math.floor(Math.random()*canvas.height()) - 50;					
-                    sizeXY = Math.floor(Math.random()*100);
-                    context.fillStyle = "rgba(" + r + "," + g + "," + b + ", 0.5)";
-                    context.backgroundImage(doge-head.png);
-                    if(x > canvas.width()) {
-                        x = 0;
-                    };
-                    setTimeout(animate, 20);
-                };
-            }); */
+            function oneSecondFunction() {
+                document.title = "Poop";
+            }
+            
+            
+           function delayedSecondFunction () {
+               document.title = "Doge-Web";
+           }
+            setTimeout(function() { Timer = setInterval(delayedSecondFunction, 1000); }, 500);
+            
         </script>
     </head>
 
@@ -447,6 +428,7 @@
             }
             
             // Sets a random height for wows on the page.
+            
             function randomHeight() {
                 var wows = document.getElementsByClassName('wowtext');
                 
