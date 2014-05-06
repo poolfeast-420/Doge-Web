@@ -16,68 +16,57 @@
                 overflow: hidden;
             }
         
-            #dogespin {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                height: 100vmin;
-                z-index: 100;
-        
-                animation:spin 4s infinite 7s linear;
-                -webkit-animation:spin 3s infinite 7s linear;
-            }
-        
             #dogeBreathing {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
+                display: table;
+                position: absolute;
+                margin: auto;
                 height: 100%;
                 width: 100%;
-                z-index: 100;
-                
-                animation:breathe 3s infinite 10s ease-in-out;
-                -webkit-animation:breathe 5s infinite 10s ease-in-out;
+                z-index: 100;                
+                margin: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+              
+                animation:breathe 3s infinite 13s ease-in-out;
+                -webkit-animation:breathe 5s infinite 13s ease-in-out;
             }
         
             #dogeFadein {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                height: 100%;
-                width: 100%;
+                display: table-cell;
+                vertical-align: middle;
+                margin: auto;
+                height: 100vmin;
                 opacity:0;
                 z-index: -100;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
                 
                 animation:fadein 5s 1 4s ease-out;
                 animation-fill-mode:forwards;
                 -webkit-animation:fadein 5s 1 4s ease-out;
                 -webkit-animation-fill-mode:forwards;
             }
-            
-            #controlBox {
-                display:none;
-                top:20%;
-                left:30%;
-                width:30%;
-                min-width:400px;
-                position:absolute;
-                border:3px solid black;
-                border-radius:10px;
-                background-color:#CCC;
-                padding:30px;
-                z-index:1000;
-            }
-            
-            #secretBox {
-                position:absolute;
-                display:block;
-                bottom:0px;
-                right:0px;
-                width:50px;
-                height:50px;
-                cursor:pointer;
-            }
         
+            #dogespin {
+                margin: auto;
+                height: 100vmin;
+                z-index: 100;
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                
+                animation:spin 4s infinite 9s linear;
+                -webkit-animation:spin 3s infinite 9s linear;
+            }
+            
             .wowtext {
                 position: absolute;
 	            font-size:70pt;
@@ -85,7 +74,7 @@
                 left: -100%;
                 z-index: -100;
             }
-        
+
             /* KEYFRAMES */
         
             @keyframes fadein {
@@ -216,50 +205,44 @@
             /* Title Changing */
             
             $(function(){
+                if (browserok) 
                 setInterval(oneSecondFunction, 1000);
             });
-
             function oneSecondFunction() {
-                document.title = "Poop";
+                document.title = "Doge-Web!";
             }
-            
-            
-           function delayedSecondFunction () {
-               document.title = "Doge-Web";
-           }
+            function delayedSecondFunction () {
+                document.title = "Doge-Web";
+            }
             setTimeout(function() { Timer = setInterval(delayedSecondFunction, 1000); }, 500);
             
         </script>
     </head>
 
     <body>
-        <div id="count"></div>
 
         <div id="dogeBreathing">
             <div id="dogeFadein">
-                <img id="dogespin" src="wowintensifies.gif" alt="doge">
+                <img id="dogespin" src="wowintensifies.gif" alt="Pretend theirs a dog here.">
             </div>
         </div>
         
         <div id="wowContainer"></div>
         
-        <div id="controlBox">
-            <audio name="backgroundMusic" loop controls>
+
+            <audio name="backgroundMusic" loop>
                 <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg" />
                 <source src="audio/PORNOGROOVE.wav" type="audio/wav" />
                 <source src="audio/PORNOGROOVE.ogg" type="audio/ogg" />
                 <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
             </audio>
 
-            <audio name="backgroundMusic" loop controls>
+            <audio name="backgroundMusic" loop>
                 <source src="audio/hey.mp3" type="audio/mpeg" />
                 <source src="audio/hey.wav" type="audio/wav" />
                 <source src="audio/hey.ogg" type="audio/ogg" />
                 <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
             </audio>
-        </div>
-        
-        <a id="secretBox"></a>
         
         <!--<p class="wowtext">Wow</p>
         <script type="text/javascript">
@@ -461,10 +444,10 @@
                     wowtext.style.setProperty("animation", "marquee-left " + speed + " infinite linear");
                     wowtext.style.setProperty("-webkit-animation", "marquee-left " + speed + " infinite linear");
 
-                    /* Yeah, I fucked shit up. I'll try to fix it ASAP. For now, no rainbows.
+                    /* Yeah, I fucked shit up. I'll try to fix it ASAP. For now, no rainbows.*/
                     var wowtext = document.getElementById(wowID);
                     var myRainbowSpan = new RainbowSpan2(wowtext, 0, 360, 255, 50, 18);
-                    myRainbowSpan2.timer = window.setInterval("myRainbowSpan2.moveRainbow()", myRainbowSpan2.speed);*/
+                    myRainbowSpan2.timer = window.setInterval("myRainbowSpan2.moveRainbow()", myRainbowSpan2.speed);
                 }
             }
             
@@ -475,13 +458,6 @@
                 console.log(rand);
                 songs.item(rand).play();
             }
-            
-            // Secret control box stuff
-            $('document').ready(function() {
-                $('#secretBox').click(function() {
-                    $('#controlBox').fadeToggle();
-                });
-            });
             
             var wowInterval;
             function start() {
