@@ -5,7 +5,8 @@
         <title>Doge-Web</title>
         <meta charset="utf-8">
         <meta name="Description" CONTENT="Wow">
-        <meta name="robots" content="noodp" />
+        <meta name="robots" content="noodp">
+        <meta name="google-site-verification" content="8ZsVXlpgvW5KiZW8nF_TWj_DsKNbd6yRzQYsGRnvKmw">
         <link rel="icon" type="image/png" href="doge-head.png">
 
         <style type="text/css">
@@ -410,7 +411,7 @@
                 }
             }
             
-            // Sets a random height for wows on the page.
+            /* Sets a random height for wows on the page */
             
             function randomHeight() {
                 var wows = document.getElementsByClassName('wowtext');
@@ -451,14 +452,6 @@
                 }
             }
             
-            // Plays a random song: to add a song, put it after the other song/s and add name="backgroundMusic" to the audio tag.
-            function playSong() {
-                var songs = document.getElementsByName('backgroundMusic');
-                var rand = Math.floor(Math.random() * songs.length);
-                console.log(rand);
-                songs.item(rand).play();
-            }
-            
             var wowInterval;
             function start() {
                 if (browserok) {
@@ -471,6 +464,16 @@
                     }, 6000);
                     playSong();
                 }
+            }
+            
+            /* Plays a random song */ 
+            // To add a song, put it after the other song/s and add name="backgroundMusic" to the audio tag.
+            
+            function playSong() {
+                var songs = document.getElementsByName('backgroundMusic');
+                var rand = Math.floor(Math.random() * songs.length);
+                console.log(rand);
+                songs.item(rand).play();
             }
             
             window.onload = start;
