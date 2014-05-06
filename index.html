@@ -120,7 +120,43 @@
                 100% { left: 100%; }
             }
         </style>
+
+        <script src="js/jquery-1.10.2.min.js"></script>
+        <script type="text/javascript">
+            /* Title Changing */
+            
+            $(function(){
+                if (browserok) 
+                setInterval(oneSecondFunction, 1000);
+            });
+            function oneSecondFunction() {
+                document.title = "Doge-Web!";
+            }
+            function delayedSecondFunction () {
+                document.title = "Doge-Web";
+            }
+            setTimeout(function() { Timer = setInterval(delayedSecondFunction, 1000); }, 500);
+            
+        </script>
         
+        <script src="js/ion.sound.js"></script>
+        <script>
+            $(document).ready(function(){
+
+            $.ionSound({
+                sounds: [
+                    "hey",
+                    "PORNOGROOVE",
+                ],
+                path: "audio/",
+                multiPlay: true,
+                volume: "1.0"
+            });
+                $.ionSound.play("PORNOGROOVE");
+            });
+                    
+        </script>
+                
         <script type="text/javascript">
             /* Rainbow Text */
         
@@ -201,56 +237,18 @@
                 this.hue += this.hspd;
             }
         </script>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-        <script type="text/javascript">
-            /* Title Changing */
-            
-            $(function(){
-                if (browserok) 
-                setInterval(oneSecondFunction, 1000);
-            });
-            function oneSecondFunction() {
-                document.title = "Doge-Web!";
-            }
-            function delayedSecondFunction () {
-                document.title = "Doge-Web";
-            }
-            setTimeout(function() { Timer = setInterval(delayedSecondFunction, 1000); }, 500);
-            
-        </script>
+    
     </head>
 
     <body>
 
         <div id="dogeBreathing">
             <div id="dogeFadein">
-                <img id="dogespin" src="wowintensifies.gif" alt="Pretend theirs a dog here.">
+                <img id="dogespin" src="wowintensifies.gif" alt="Doge-Web">
             </div>
         </div>
         
         <div id="wowContainer"></div>
-        
-
-            <audio name="backgroundMusic" loop>
-                <source src="audio/PORNOGROOVE.mp3" type="audio/mpeg" />
-                <source src="audio/PORNOGROOVE.wav" type="audio/wav" />
-                <source src="audio/PORNOGROOVE.ogg" type="audio/ogg" />
-                <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
-            </audio>
-
-            <audio name="backgroundMusic" loop>
-                <source src="audio/hey.mp3" type="audio/mpeg" />
-                <source src="audio/hey.wav" type="audio/wav" />
-                <source src="audio/hey.ogg" type="audio/ogg" />
-                <embed height="50" width="100" src="/audio/PORNOGROOVE.mp3">
-            </audio>
-        
-        <!--<p class="wowtext">Wow</p>
-        <script type="text/javascript">
-            var wowtext=document.getElementById("wowtext");
-            var myRainbowSpan2=new RainbowSpan(wowtext, 0, 360, 255, 50, 18);
-            myRainbowSpan2.timer=window.setInterval("myRainbowSpan2.moveRainbow()", myRainbowSpan2.speed);
-        </script>-->
 
         <script>
             /* Background Fading Effect */
@@ -464,16 +462,6 @@
                     }, 6000);
                     playSong();
                 }
-            }
-            
-            /* Plays a random song */ 
-            // To add a song, put it after the other song/s and add name="backgroundMusic" to the audio tag.
-            
-            function playSong() {
-                var songs = document.getElementsByName('backgroundMusic');
-                var rand = Math.floor(Math.random() * songs.length);
-                console.log(rand);
-                songs.item(rand).play();
             }
             
             window.onload = start;
