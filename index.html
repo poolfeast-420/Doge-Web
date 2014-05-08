@@ -452,15 +452,6 @@
             }
             
             window.onload = start;
-            /* Plays a random song */ 
-            // To add a song, put it after the other song/s and add name="backgroundMusic" to the audio tag.
-            
-            function playSong() {
-                var songs = document.getElementsByName('backgroundMusic');
-                var rand = Math.floor(Math.random() * songs.length);
-                console.log(rand);
-                songs.item(rand).play();
-            }
 </script>
 </body>
 </html>
