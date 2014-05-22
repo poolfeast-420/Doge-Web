@@ -110,16 +110,65 @@
             }
             
             @keyframes marquee-left {
-                0% { right:100%; }
-                100% { left: 100%; }
+                0% { left:-100%; }
+                100% { right:-100%; }
             }
             
             @-webkit-keyframes marquee-left {
                 0% { left:-100%; }
-                100% { left: 100%; }
+                100% { right:-100%; }
             }
+            
+            @keyframes rotate {
+                0% { transform:rotateY(0deg); }
+                100% {transform:rotateY(359deg); }
+            }
+            
+            @-webkit-keyframes rotate {
+                0% { transform:rotateY(0deg); }
+                100% {transform:rotateY(359deg); }
+            }
+            
 </style>
-
+</head>
+<body>
+<div id="dogeBreathing">
+<div id="dogeFadein"><img id="dogespin" src="image/wowintensifies.gif" alt="Wow"></div>
+</div>
+<div id="wowContainer"></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+            /* Title Changing */
+            
+            $(function(){
+                if (browserok) 
+                setInterval(oneSecondFunction, 1000);
+            });
+            function oneSecondFunction() {
+                document.title = "Wow";
+                setTimeout(delayedSecondFunction, 1000);
+            }
+            function delayedSecondFunction () {
+                document.title = "Doge-Web";
+                setTimeout(oneSecondFunction, 1000);
+            }
+</script>
+<script src="js/jquery-1.10.2.min.js" type="text/javascript">
+</script>
+<script src="js/soundmanager2-nodebug-jsmin.js"></script>
+<script>
+            soundManager.setup({
+                url: 'swf/',
+                onready: function() {
+                    var mySound = soundManager.createSound({
+                        id: 'aSound',
+                        url: 'audio/PORNOGROOVE.mp3'
+                    });
+                    mySound.play();
+                },
+            });
+</script>
 <script type="text/javascript">
             /* Rainbow Text */
         
@@ -200,45 +249,6 @@
                 this.hue += this.hspd;
             }
 </script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript">
-</script>
-<script type="text/javascript">
-            /* Title Changing */
-            
-            $(function(){
-                if (browserok) 
-                setInterval(oneSecondFunction, 1000);
-            });
-            function oneSecondFunction() {
-                document.title = "Wow";
-                setTimeout(delayedSecondFunction, 1000);
-            }
-            function delayedSecondFunction () {
-                document.title = "Doge-Web";
-                setTimeout(oneSecondFunction, 1000);
-            }
-</script>
-<script src="js/jquery-1.10.2.min.js" type="text/javascript">
-</script>
-<script src="js/soundmanager2-nodebug-jsmin.js"></script>
-<script>
-            soundManager.setup({
-                url: 'swf/',
-                onready: function() {
-                    var mySound = soundManager.createSound({
-                        id: 'aSound',
-                        url: 'audio/PORNOGROOVE.mp3'
-                    });
-                    mySound.play();
-                },
-            });
-</script>
-</head>
-<body>
-<div id="dogeBreathing">
-<div id="dogeFadein"><img id="dogespin" src="image/wowintensifies.gif" alt="Wow"></div>
-</div>
-<div id="wowContainer"></div>
 <script type="text/javascript">
             /* Background Fading Effect */
         
