@@ -1,2 +1,6 @@
 CACHE MANIFEST
- /image/wowintensifies.gif
+ /image/*
+ /audio/*
+ 
+ FALLBACK:
+ /html/ /index.html
