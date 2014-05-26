@@ -65,9 +65,16 @@
                 
                 /*animation:spin 4s infinite 8s linear;
                 -webkit-animation:spin 4s infinite 8s linear;*/
-                -webkit-animation: rotate 4s
+                
                 animation: rotate 4s;
-            }
+                -webkit-animation: rotate 4s;
+                transform-origin: 0% 0%;
+                -webkit-transform-origin: 0% 0%;
+                perspective: 200;
+                -webkit-perspective: 200;
+                perspective-origin: 50% 50%;
+                -webkit-perspective-origin: 50% 50%;
+             }
             
             .wowtext {
                 position: absolute;
