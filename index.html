@@ -8,6 +8,8 @@
 <meta name="Description" content="Wow">
 <meta name="robots" content="noodp">
 <meta name="google-site-verification" content="8ZsVXlpgvW5KiZW8nF_TWj_DsKNbd6yRzQYsGRnvKmw">
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<meta name="viewport" content="width=device-width" />
 <link rel="icon" type="image/png" href="image/doge-head.ico">
 <style type="text/css">
             /* Containers */
@@ -156,19 +158,17 @@
                 setTimeout(oneSecondFunction, 1000);
             }
 </script>
-<script src="js/jquery-1.10.2.min.js" type="text/javascript">
-</script>
 <script src="js/soundmanager2-nodebug-jsmin.js"></script>
 <script>
             soundManager.setup({
                 url: 'swf/',
                 onready: function() {
-                    var mySound = soundManager.createSound({
-                        id: 'aSound',
-                        url: 'audio/PORNOGROOVE.mp3'
-                    });
-                    mySound.play();
-                },
+                  var s = soundManager.createSound({
+                    id: 'Groove',
+                    url: 'audio/PORNOGROOVE.mp3'
+                });
+                    s.play({loops: 3});
+            },
             });
 </script>
 <script type="text/javascript">
