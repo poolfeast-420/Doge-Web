@@ -157,6 +157,26 @@
                 setTimeout(oneSecondFunction, 1000);
             }
 </script>
+<script type="text/javascript">
+            /* Fullscreen */
+            
+            $(function(){
+                if (browserok)
+// Find the right method, call on correct element
+function launchFullScreen(element) {
+  if(element.requestFullScreen) {
+    element.requestFullScreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.webkitRequestFullScreen) {
+    element.webkitRequestFullScreen();
+  }
+}
+
+// Launch fullscreen for browsers that support it!
+launchFullScreen(document.documentElement); // the whole page
+launchFullScreen(document.getElementById("videoElement")); // any individual element
+</script>
 <script src="js/soundmanager2-nodebug-jsmin.js"></script>
 <script>
             soundManager.setup({
