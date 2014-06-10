@@ -3,4 +3,4 @@ CACHE MANIFEST
 /Doge-Web/image/doge-head.ico
 /Doge-Web/audio/PORNOGROOVE.mp3
 FALLBACK:
- /html/ /index.html
+ /html/ /Doge-Web/index.html
