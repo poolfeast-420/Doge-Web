@@ -164,16 +164,16 @@
             
             $(function(){
                 if (browserok)
-// Find the right method, call on correct element
-function launchFullScreen(element) {
-  if(element.requestFullScreen) {
-    element.requestFullScreen();
-  } else if(element.mozRequestFullScreen) {
-    element.mozRequestFullScreen();
-  } else if(element.webkitRequestFullScreen) {
-    element.webkitRequestFullScreen();
-  }
-}
+            // Find the right method, call on correct element
+            function launchFullScreen(element) {
+             if(element.requestFullScreen) {
+                element.requestFullScreen();
+                         } else if(element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+             } else if(element.webkitRequestFullScreen) {
+               element.webkitRequestFullScreen();
+              }
+            }
 
 // Launch fullscreen for browsers that support it!
 launchFullScreen(document.documentElement); // the whole page
@@ -188,6 +188,7 @@ launchFullScreen(document.getElementById("videoElement")); // any individual ele
                     id: 'Groove',
                     url: 'audio/PORNOGROOVE.mp3'
                 });
+                    console.log("Playing Song");
                     s.play({loops: 3});
             },
             });
