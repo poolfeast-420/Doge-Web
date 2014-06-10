@@ -1,11 +1,6 @@
 CACHE MANIFEST
- 
- /image/
-   wowintensifies.gif
-   doge-head.ico
- /audio/
-   PORNOGROOVE.mp3
- 
- FALLBACK:
- 
+ /image/wowintensifies.gif
+ /image/doge-head.ico
+ /audio/PORNOGROOVE.mp3
+FALLBACK:
  /html/ /index.html
