@@ -151,10 +151,12 @@
             function oneSecondFunction() {
                 document.title = "Wow";
                 setTimeout(delayedSecondFunction, 1000);
+                console.log("Set title to Wow");
             }
             function delayedSecondFunction () {
                 document.title = "Doge-Web";
                 setTimeout(oneSecondFunction, 1000);
+                console.log("Set title to Doge-Web");
             }
 </script>
 <script type="text/javascript">
