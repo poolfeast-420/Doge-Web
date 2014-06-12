@@ -68,7 +68,7 @@
                 -webkit-perspective: 800px;
                 -webkit-perspective-origin: 50% 100px;
             }
-            
+    
             .wowtext {
                 position: absolute;
                 font-size:70pt;
@@ -132,14 +132,9 @@
             }
             
 </style>
-</head>
-<body>
-<div id="dogeBreathing">
-<div id="dogeFadein"><img id="dogespin" src="image/wowintensifies.gif" alt="Wow"></div>
-</div>
-<div id="wowContainer"></div>
-<script src="js/jquery-1.11.1.min.js" type="text/javascript">
-</script>
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/screenfull.min.js"></script>
+<script src="js/soundmanager2-nodebug-jsmin.js"></script>
 <script type="text/javascript">
             /* Title Changing */
             
@@ -158,17 +153,17 @@
                 console.log("Set title to Doge-Web");
             }
 </script>
-<script src="js/screenfull.min.js" type="text/javascript"></script>
-<script>
+<script type="text/javascript">
             /* Fullscreen */
-
-            $(function(){
-                screenfull.request();
-                console.log("Fullscreened")
-            });
+    
+            document.addEventListener("keydown", function(e) {
+                    if (e.keyCode == 13) {
+                            screenfull.request();
+                            console.log("Fullscreened")
+                        }
+            }, false);
 </script>
-<script src="js/soundmanager2-nodebug-jsmin.js"></script>
-<script>
+<script type="text/javascript">
             /* Commence Groove */
             
             soundManager.setup({
@@ -421,6 +416,8 @@
                     setrandomcolor()
                 }
             }
+</script>
+<script type="text/javascript">
             /* Sets a random height for wows on the page */
             
             function randomHeight() {
@@ -474,5 +471,14 @@
             
             window.onload = start;
 </script>
+</head>
+<body>
+<div id="dogeBreathing">
+    <div id="dogeFadein">
+        <img id="dogespin" src="image/wowintensifies.gif" alt="Wow">
+    </div>
+</div>
 </body>
+<footer>
+</footer>
 </html>
