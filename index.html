@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <!--Wow, you're looking at the source code. You must be quite the hacker.-->
 <html lang="en" manifest="doge-web.appcache">
+
 <head>
 <title>Doge-Web</title>
 <meta charset="utf-8">
@@ -9,6 +10,9 @@
 <meta name="google-site-verification" content="8ZsVXlpgvW5KiZW8nF_TWj_DsKNbd6yRzQYsGRnvKmw">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <link rel="icon" type="image/png" href="image/doge-head.ico">
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/screenfull.min.js"></script>
+<script src="js/soundmanager2-nodebug-jsmin.js"></script>
 <style type="text/css">
             /* Containers */
             
@@ -132,9 +136,6 @@
             }
             
 </style>
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/screenfull.min.js"></script>
-<script src="js/soundmanager2-nodebug-jsmin.js"></script>
 <script type="text/javascript">
             /* Title Changing */
             
@@ -155,13 +156,13 @@
 </script>
 <script type="text/javascript">
             /* Fullscreen */
-    
-            document.addEventListener("keydown", function(e) {
-                    if (e.keyCode == 13) {
-                            screenfull.request();
-                            console.log("Fullscreened")
-                        }
-            }, false);
+            
+            function watch(e) {
+                /*console.log(e);*/
+                screenfull.request();
+                console.log("Fullscreen Attempted")
+            }
+            $(document).bind("keydown keyup mousedown mousewheel touchstart touchmove scroll DOMMouseScroll", watch);
 </script>
 <script type="text/javascript">
             /* Commence Groove */
@@ -174,9 +175,9 @@
                     url: 'audio/PORNOGROOVE.mp3'
                 });
                     s.play({loops: 3});
+                    console.log("Attempting to Play Groove");
             },
             });
-            console.log("Playing Groove");
 </script>
 <script type="text/javascript">
             /* Rainbow Text */
@@ -471,14 +472,15 @@
             
             window.onload = start;
 </script>
+
 </head>
 <body>
+
 <div id="dogeBreathing">
     <div id="dogeFadein">
         <img id="dogespin" src="image/wowintensifies.gif" alt="Wow">
     </div>
 </div>
+
 </body>
-<footer>
-</footer>
 </html>
