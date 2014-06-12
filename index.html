@@ -162,11 +162,10 @@
 <script>
             /* Fullscreen */
 
-        window.onload {
-            if (screenfull.enabled) {
-            screenfull.request();
-            }
-        };        
+            $(function(){
+                screenfull.request();
+                console.log("Fullscreened")
+            });
 </script>
 <script src="js/soundmanager2-nodebug-jsmin.js"></script>
 <script>
@@ -182,7 +181,7 @@
                     s.play({loops: 3});
             },
             });
-            console.log("Playing Groove")
+            console.log("Playing Groove");
 </script>
 <script type="text/javascript">
             /* Rainbow Text */
