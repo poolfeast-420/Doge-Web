@@ -4,5 +4,6 @@ CACHE MANIFEST
 /Doge-Web/audio/PORNOGROOVE.mp3
 /Doge-Web/js/soundmanager2-nodebug-jsmin.js
 /Doge-Web/js/jquery-1.11.1.min.js
+/Doge-Web/js/screenfull.min.js
 FALLBACK:
  /html/ /Doge-Web/index.html
