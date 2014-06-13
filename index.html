@@ -3,22 +3,26 @@
 <html lang="en" manifest="doge-web.appcache">
 
 <head>
-<title>Doge-Web</title>
-<meta charset="utf-8">
-<meta name="Description" content="Wow">
-<meta name="robots" content="noodp">
-<meta name="google-site-verification" content="8ZsVXlpgvW5KiZW8nF_TWj_DsKNbd6yRzQYsGRnvKmw">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-<link rel="icon" type="image/png" href="image/doge-head.ico">
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/screenfull.min.js"></script>
-<script src="js/soundmanager2-nodebug-jsmin.js"></script>
-<style type="text/css">
-            /* Containers */
+    <title>Doge-Web</title>
+    <meta charset="utf-8">
+    <meta name="Description" content="Wow">
+    <meta name="robots" content="noodp">
+    <meta name="google-site-verification" content="8ZsVXlpgvW5KiZW8nF_TWj_DsKNbd6yRzQYsGRnvKmw">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="icon" type="image/png" href="image/doge-head.ico">
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/screenfull.min.js"></script>
+    <script src="js/soundmanager2-nodebug-jsmin.js"></script>
+    <style type="text/css">
+        /* Containers */
             
             body, html {
                 font-family : "Comic Sans MS", "Comic Sans";
                 overflow: hidden;
+                -webkit-perspective: 800px;
+                -moz-perspective: 800px;
+                -o-perspective: 800px;
+                perspective: 800px;
             }
         
             #dogeBreathing {
@@ -70,6 +74,14 @@
                 -webkit-animation-delay: 0s, .5s;
                 -webkit-animation-duration: 500ms, 1000ms;
                 -webkit-animation-name: button-bounce, rotate;
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                -o-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+                -webkit-transition: -webkit-transform 1s;
+                -moz-transition: -moz-transform 1s;
+                -o-transition: -o-transform 1s;
+                transition: transform 1s;
     
             .wowtext {
                 position: absolute;
@@ -140,9 +152,9 @@
                 75% { -webkit-transform: scale(.9); }
                 100% { -webkit-transform: scale(1); }
             }
-</style>
-<script type="text/javascript">
-                /* Animation */
+    </style>
+    <script type="text/javascript">
+        /* Animation */
                 
                 $(document).ready(function() {
                     $(document).click(function() {
@@ -159,11 +171,10 @@
                             });
                         }
                     });
-                }); 
-    
-</script>
-<script type="text/javascript">
-            /* Title Changing */
+                });
+    </script>
+    <script type="text/javascript">
+        /* Title Changing */
             
             $(function(){
                 if (browserok) 
@@ -179,9 +190,9 @@
                 setTimeout(oneSecondFunction, 1000);
                 console.log("Set title to Doge-Web");
             }
-</script>
-<script type="text/javascript">
-            /* Fullscreen */
+    </script>
+    <script type="text/javascript">
+        /* Fullscreen */
             
             function watch(e) {
                 /*console.log(e);*/
@@ -189,9 +200,9 @@
                 console.log("Fullscreen Attempted")
             }
             $(document).bind("keydown keyup mousedown mousewheel touchstart touchmove scroll DOMMouseScroll", watch);
-</script>
-<script type="text/javascript">
-            /* Commence Groove */
+    </script>
+    <script type="text/javascript">
+        /* Commence Groove */
             
             soundManager.setup({
                 url: 'swf/',
@@ -204,9 +215,9 @@
                     console.log("Attempting to Play Groove");
             },
             });
-</script>
-<script type="text/javascript">
-            /* Rainbow Text */
+    </script>
+    <script type="text/javascript">
+        /* Rainbow Text */
         
             function toSpans(span) {
                 var str = span.firstChild.data;
@@ -284,9 +295,9 @@
                 }
                 this.hue += this.hspd;
             }
-</script>
-<script type="text/javascript">
-            /* Background Fading Effect */
+    </script>
+    <script type="text/javascript">
+        /* Background Fading Effect */
         
             var fade_effect = 2
         
@@ -443,9 +454,9 @@
                     setrandomcolor()
                 }
             }
-</script>
-<script type="text/javascript">
-            /* Sets a random height for wows on the page */
+    </script>
+    <script type="text/javascript">
+        /* Sets a random height for wows on the page */
             
             function randomHeight() {
                 var wows = document.getElementsByClassName('wowtext');
@@ -497,16 +508,18 @@
             }
             
             window.onload = start;
-</script>
+    </script>
 
 </head>
+
 <body>
 
-<div id="dogeBreathing">
-    <div id="dogeFadein">
-        <img id="dogespin" src="image/wowintensifies.gif" alt="Wow">
+    <div id="dogeBreathing">
+        <div id="dogeFadein">
+            <img id="dogespin" src="image/wowintensifies.gif" alt="Wow">
+        </div>
     </div>
-</div>
 
 </body>
+
 </html>
