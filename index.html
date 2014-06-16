@@ -82,7 +82,8 @@
                 -moz-transition: -moz-transform 1s;
                 -o-transition: -o-transform 1s;
                 transition: transform 1s;
-    
+            }
+                
             .wowtext {
                 position: absolute;
                 font-size:70pt;
@@ -153,26 +154,6 @@
                 100% { -webkit-transform: scale(1); }
             }
     </style>
-    <script type="text/javascript">
-        /* Animation */
-                
-                $(document).ready(function() {
-                    $(document).click(function() {
-                        var count = 0;
-                        var jqElement = $('.outside');
-                        if (!jqElement.hasClass('animate')) {
-                            jqElement.addClass('animate');
-                            jqElement.on('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd', function(event) {
-                                count++;
-                                if (count >= 6) {
-                                    jqElement.off('animationend webkitAnimationEnd oAnimationEnd MSAnimationEnd');
-                                    jqElement.removeClass('animate');
-                                }
-                            });
-                        }
-                    });
-                });
-    </script>
     <script type="text/javascript">
         /* Title Changing */
             
