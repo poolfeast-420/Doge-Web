@@ -17,12 +17,8 @@
         /* Containers */
             
             body, html {
-                font-family : "Comic Sans MS", "Comic Sans";
+                font-family: "Comic Sans MS", "Comic Sans";
                 overflow: hidden;
-                -webkit-perspective: 800px;
-                -moz-perspective: 800px;
-                -o-perspective: 800px;
-                perspective: 800px;
             }
         
             #dogeBreathing {
@@ -47,7 +43,7 @@
                 vertical-align: middle;
                 margin: auto;
                 height: 100vmin;
-                opacity:0;
+                opacity: 0;
                 z-index: -100;
                 position: absolute;
                 top: 0;
@@ -70,27 +66,10 @@
                 left: 0;
                 bottom: 0;
                 right: 0;
-
-                -webkit-animation-delay: 0s, .5s;
-                -webkit-animation-duration: 500ms, 1000ms;
-                -webkit-animation-name: button-bounce, rotate;
-                -webkit-transform-style: preserve-3d;
-                -moz-transform-style: preserve-3d;
-                -o-transform-style: preserve-3d;
-                transform-style: preserve-3d;
-                -webkit-transition: -webkit-transform 1s;
-                -moz-transition: -moz-transform 1s;
-                -o-transition: -o-transform 1s;
-                transition: transform 1s;
-            }
                 
-            .wowtext {
-                position: absolute;
-                font-size:70pt;
-                margin:0;
-                left: -100%;
-                z-index: -100;
-            }
+                animation:spin 1s infinite 8s ease-in;
+                -webkit-animation:spin 1s infinite 8s ease-in;
+             }
 
             /* KEYFRAMES */
         
@@ -137,15 +116,23 @@
             }
             
             @keyframes rotate {
-                0% { transform:rotateY(0deg); }
-                100% {transform:rotateY(359deg); }
+                0% { transform:rotateY(130deg); }
+                100% {transform:rotateY(0deg); }
             }
             
             @-webkit-keyframes rotate {
-                0% { transform:rotateY(0deg); }
-                100% {transform:rotateY(359deg); }
+                0% { transform:rotateY(130deg); }
+                100% {transform:rotateY(0deg); }
             }
             
+            @keyframes button-bounce {
+                0% { -webkit-transform: scale(1); }
+                25% { -webkit-transform: scale(.8); }
+                50% { -webkit-transform: scale(1); }
+                75% { -webkit-transform: scale(.9); }
+                100% { -webkit-transform: scale(1); }
+            }
+        
             @-webkit-keyframes button-bounce {
                 0% { -webkit-transform: scale(1); }
                 25% { -webkit-transform: scale(.8); }
