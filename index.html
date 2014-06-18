@@ -34,8 +34,10 @@
                 bottom: 0;
                 right: 0;
               
-                animation:breathe 3s infinite 13s ease-in-out;
                 -webkit-animation:breathe 5s infinite 13s ease-in-out;
+                -moz-animation:breathe 3s infinite 13s ease-in-out;
+                -o-animation:breathe 3s infinite 13s ease-in-out;
+                animation:breathe 3s infinite 13s ease-in-out;
             }
         
             #dogeFadein {
@@ -51,14 +53,10 @@
                 bottom: 0;
                 right: 0;
                 
-                -webkit-animation:fadein 5s 1 4s ease-out;
-                -webkit-animation-fill-mode:forwards;
-                -moz-animation:fadein 5s 1 4s ease-out;
-                -moz-animation-fill-mode:forwards;
-                -o-animation:fadein 5s 1 4s ease-out;
-                -o-animation-fill-mode:forwards;
-                animation:fadein 5s 1 4s ease-out;
-                animation-fill-mode:forwards;
+                -webkit-animation:fadein 5s 1 4s ease-out forwards;
+                -moz-animation:fadein 5s 1 4s ease-out forwards;
+                -o-animation:fadein 5s 1 4s ease-out forwards;
+                animation:fadein 5s 1 4s ease-out forwards;
             }
         
             #dogespin {
@@ -71,8 +69,10 @@
                 bottom: 0;
                 right: 0;
                 
-                animation:button-bounce 1s infinite 8s linear;
                 -webkit-animation:button-bounce 1s infinite 8s linear;
+                -moz-animation:button-bounce 1s infinite 8s linear;
+                -o-animation:button-bounce 1s infinite 8s linear;
+                animation:button-bounce 1s infinite 8s linear;
              }
 
             /* KEYFRAMES */
@@ -97,14 +97,24 @@
                 100% { opacity:1; }
             }
             
-            @keyframes spin {
-                0% { transform:rotateZ(0deg); }
-                100% { transform:rotateZ(359deg); }
-            }
-        
             @-webkit-keyframes spin {
                 0% { -webkit-transform:rotateZ(0deg); }
                 100% { -webkit-transform:rotateZ(359deg); }
+            }
+
+            @-moz-keyframes spin {
+                0% { -moz-transform:rotateZ(0deg); }
+                100% { -moz-transform:rotateZ(359deg); }
+            }
+
+            @-o-keyframes spin {
+                0% { -o-transform:rotateZ(0deg); }
+                100% { -o-transform:rotateZ(359deg); }
+            }
+
+            @keyframes spin {
+                0% { transform:rotateZ(0deg); }
+                100% { transform:rotateZ(359deg); }
             }
         
             @keyframes breathe {
