@@ -34,10 +34,10 @@
                 bottom: 0;
                 right: 0;
               
-                -webkit-animation:breathe 5s infinite 13s ease-in-out;
-                -moz-animation:breathe 3s infinite 13s ease-in-out;
-                -o-animation:breathe 3s infinite 13s ease-in-out;
-                animation:breathe 3s infinite 13s ease-in-out;
+                -webkit-animation: rotate 4s infinite 8s linear;
+                -moz-animation: rotate 4s infinite 8s linear;
+                -o-animation: rotate 4s infinite 8s linear;
+                animation: rotate 4s infinite 8s linear;
             }
         
             #dogeFadein {
@@ -45,7 +45,7 @@
                 vertical-align: middle;
                 margin: auto;
                 height: 100vmin;
-                opacity: 0;
+                opacity: 1;
                 z-index: -100;
                 position: absolute;
                 top: 0;
@@ -53,10 +53,10 @@
                 bottom: 0;
                 right: 0;
                 
-                -webkit-animation:fadein 5s 1 4s ease-out forwards;
-                -moz-animation:fadein 5s 1 4s ease-out forwards;
-                -o-animation:fadein 5s 1 4s ease-out forwards;
-                animation:fadein 5s 1 4s ease-out forwards;
+                -webkit-animation: flip 5s infinite 8s linear;
+                -moz-animation: flip 5s infinite 8s linear;
+                -o-animation: flip 5s infinite 8s linear;
+                animation: flip 5s infinite 8s linear;
             }
         
             #dogespin {
@@ -69,10 +69,10 @@
                 bottom: 0;
                 right: 0;
                 
-                -webkit-animation:button-bounce 1s infinite 8s linear;
-                -moz-animation:button-bounce 1s infinite 8s linear;
-                -o-animation:button-bounce 1s infinite 8s linear;
-                animation:button-bounce 1s infinite 8s linear;
+                -webkit-animation: spin 3s infinite 13s linear;
+                -moz-animation: spin 3s infinite 13s linear;
+                -o-animation: spin 3s infinite 13s linear;
+                animation: spin 3s infinite 13s linear;
              }
 
             /* KEYFRAMES */
@@ -99,28 +99,62 @@
             
             @-webkit-keyframes spin {
                 0% { -webkit-transform:rotateZ(0deg); }
-                100% { -webkit-transform:rotateZ(359deg); }
+                100% { -webkit-transform:rotateZ(360deg); }
             }
 
             @-moz-keyframes spin {
                 0% { -moz-transform:rotateZ(0deg); }
-                100% { -moz-transform:rotateZ(359deg); }
+                100% { -moz-transform:rotateZ(360deg); }
             }
 
             @-o-keyframes spin {
                 0% { -o-transform:rotateZ(0deg); }
-                100% { -o-transform:rotateZ(359deg); }
+                100% { -o-transform:rotateZ(360deg); }
             }
 
             @keyframes spin {
                 0% { transform:rotateZ(0deg); }
-                100% { transform:rotateZ(359deg); }
+                100% { transform:rotateZ(360deg); }
             }
         
-            @keyframes breathe {
-                0% { transform:scale(1); }
-                50% { transform:scale(0.5); }
-                100% {transform:scale(1); }
+            @-webkit-keyframes flip {
+                0% { -webkit-transform:rotateX(0deg); }
+                100% { -webkit-transform:rotateX(360deg); }
+            }
+
+            @-moz-keyframes flip {
+                0% { -moz-transform:rotateX(0deg); }
+                100% { -moz-transform:rotateX(360deg); }
+            }
+
+            @-o-keyframes flip {
+                0% { -o-transform:rotateX(0deg); }
+                100% { -o-transform:rotateX(360deg); }
+            }
+
+            @keyframes flip {
+                0% { transform:rotateX(0deg); }
+                100% { transform:rotateX(360deg); }
+            }
+        
+            @-webkit-keyframes rotate {
+                0% { -webkit-transform:rotateY(0deg); }
+                100% { -webkit-transform:rotateY(360deg); }
+            }
+            
+            @-moz-keyframes rotate {
+                0% { -moz-transform:rotateY(0deg); }
+                100% { -moz-transform:rotateY(360deg); }
+            }
+            
+            @-o-keyframes rotate {
+                0% { -o-transform:rotateY(0deg); }
+                100% { -o-transform:rotateY(360deg); }
+            }
+            
+            @keyframes rotate {
+                0% { transform:rotateY(0deg); }
+                100% { transform:rotateY(360deg); }
             }
         
             @-webkit-keyframes breathe {
@@ -129,32 +163,50 @@
                 100% { -webkit-transform:scale(1); }
             }
             
-            @keyframes marquee-left {
+            @-moz-keyframes breathe {
+                0% { -moz-transform:scale(1); }
+                50% { -moz-transform:scale(0.5); }
+                100% { -moz-transform:scale(1); }
+            }
+            
+            @-o-keyframes breathe {
+                0% { -o-transform:scale(1); }
+                50% { -o-transform:scale(0.5); }
+                100% { -o-transform:scale(1); }
+            }
+            
+            @keyframes breathe {
+                0% { transform:scale(1); }
+                50% { transform:scale(0.5); }
+                100% {transform:scale(1); }
+            }
+            
+            @-webkit-keyframes marquee {
                 0% { left:-100%; }
                 100% { right:-100%; }
             }
             
-            @-webkit-keyframes marquee-left {
+            @-moz-keyframes marquee {
                 0% { left:-100%; }
                 100% { right:-100%; }
             }
             
-            @keyframes rotate {
-                0% { transform:rotateY(130deg); }
-                100% {transform:rotateY(0deg); }
+            @-o-keyframes marquee {
+                0% { left:-100%; }
+                100% { right:-100%; }
             }
             
-            @-webkit-keyframes rotate {
-                0% { transform:rotateY(130deg); }
-                100% {transform:rotateY(0deg); }
+            @keyframes marquee {
+                0% { left:-100%; }
+                100% { right:-100%; }
             }
             
             @keyframes button-bounce {
-                0% { -webkit-transform: scale(1); }
-                25% { -webkit-transform: scale(.8); }
-                50% { -webkit-transform: scale(1); }
-                75% { -webkit-transform: scale(.9); }
-                100% { -webkit-transform: scale(1); }
+                0% { transform: scale(1); }
+                25% { transform: scale(.8); }
+                50% { transform: scale(1); }
+                75% { transform: scale(.9); }
+                100% { transform: scale(1); }
             }
         
             @-webkit-keyframes button-bounce {
