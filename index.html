@@ -51,10 +51,14 @@
                 bottom: 0;
                 right: 0;
                 
-                animation:fadein 5s 1 4s ease-out;
-                animation-fill-mode:forwards;
                 -webkit-animation:fadein 5s 1 4s ease-out;
                 -webkit-animation-fill-mode:forwards;
+                -moz-animation:fadein 5s 1 4s ease-out;
+                -moz-animation-fill-mode:forwards;
+                -o-animation:fadein 5s 1 4s ease-out;
+                -o-animation-fill-mode:forwards;
+                animation:fadein 5s 1 4s ease-out;
+                animation-fill-mode:forwards;
             }
         
             #dogespin {
@@ -73,16 +77,26 @@
 
             /* KEYFRAMES */
         
-            @keyframes fadein {
-                0% { visibility:none; }
-                100% { visibility:visible; }
-            }
-        
             @-webkit-keyframes fadein {
                 0% { opacity:0; }
                 100% { opacity:1; }
             }
+            
+            @-moz-keyframes fadein {
+                0% { opacity:0; }
+                100% { opacity:1; }
+            }
         
+            @-o-keyframes fadein {
+                0% { opacity:0; }
+                100% { opacity:1; }
+            }
+            
+            @keyframes fadein {
+                0% { opacity:0; }
+                100% { opacity:1; }
+            }
+            
             @keyframes spin {
                 0% { transform:rotateZ(0deg); }
                 100% { transform:rotateZ(359deg); }
