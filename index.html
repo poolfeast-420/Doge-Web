@@ -59,7 +59,7 @@
                 animation: flip 5s infinite 8s linear;
             }
         
-            #dogeInner {
+            img.rotate {
                 margin: auto;
                 height: 100vmin;
                 z-index: 100;
@@ -69,10 +69,7 @@
                 bottom: 0;
                 right: 0;
                 
-                -webkit-animation: spin 3s infinite 13s linear;
-                -moz-animation: spin 3s infinite 13s linear;
-                -o-animation: spin 3s infinite 13s linear;
-                animation: spin 3s infinite 13s linear;
+                -webkit-animation:rotate 0.1s linear infinite;
              }
 
             /* Animation Keyframes */
@@ -138,9 +135,13 @@
             }
         
             @-webkit-keyframes rotate {
-                0% { -webkit-transform:rotateY(0deg); }
-                100% { -webkit-transform:rotateY(360deg); }
-            }
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
             
             @-moz-keyframes rotate {
                 0% { -moz-transform:rotateY(0deg); }
@@ -220,70 +221,42 @@
     <script>
         /* Change Animation Speed */
         
-        // search the CSSOM for a specific -webkit-keyframe rule
-            function findKeyframesRule(rule) {
-                console.log("Finding keyframes rule");
-                
-                // gather all stylesheets into an array
-                var ss = document.styleSheets;
-        
-                // loop through the stylesheets
-                for (var i = 0; i < ss.length; ++i) {
-            
-                    // loop through all the rules
-                    for (var j = 0; j < ss[i].cssRules.length; ++j) {
-                
-                        // find the -webkit-keyframe rule whose name matches our passed over parameter and return that rule
-                        if (ss[i].cssRules[j].type == window.CSSRule.WEBKIT_KEYFRAMES_RULE && ss[i].cssRules[j].name == rule)
-                        return ss[i].cssRules[j];
-                    }
-                }
-                // rule not found
-                return null;
+            var pfx = ["webkit", "moz", "MS", "o", ""], // Allow browser prefixes to work for PrefixedEvent
+            rotates = $('.rotate'), // Obtain all rotates
+            prevent = false; // Prevent new element from being created each iteration
+
+            function PrefixedEvent(element, type, callback) { // Allow one JS listener based on browser
+	           for (var p = 0; p < pfx.length; p++) {
+		          if (!pfx[p]) type = type.toLowerCase();
+		          element.addEventListener(pfx[p]+type, callback, false);
+	           }
             }
 
-            // remove old keyframes and add new ones
-            function change(anim) {
-                
-                // find our -webkit-keyframe rule
-                var keyframes = findKeyframesRule(anim);
-        
-                // remove the existing 0% and 100% rules
-                keyframes.deleteRule("0%");
-                keyframes.deleteRule("100%");
-        
-                // create new 0% and 100% rules with random numbers
-                keyframes.insertRule("0% { -webkit-transform: rotateZ(0deg);");
-                keyframes.insertRule("100% { -webkit-transform: rotateZ(180deg)");
-        
-                // assign the animation to our element (which will cause the animation to run)
-                document.getElementById('dogeInner').style.webkitAnimationName = anim;
-                console.log("Changing keyframes");
+            function listen() { // Listen for animationIterations. Named because it needs to applied to cloned elements
+                for(var i = 0, j = rotates.length; i < j; i ++) { // Add listener to each `rotate`
+                    PrefixedEvent(rotates[i], "AnimationIteration", function() { // Apply the listener based on browser
+                        if(!$('#faster').is(':checked') && !prevent) { // This happens if box is not checked
+                var el = $(this),  
+                   newOne = el.clone(true).css({'animation':'rotate 2s linear infinite'}); // Make a clone of the element so the animation can be restarted. See http://css-tricks.com/restart-css-animation/ for full info        
+                el.before(newOne);        
+                $("." + el.attr("class") + ":last").remove(); // Remove old element
+                rotates = $('.rotate'); // Update list of `rotate`s
+                listen(); // Apply listeners again
+                prevent = true; // Prevent this if from happening directly after
             }
-
-            // begin the new animation process
-            function startChange() {
-                
-                // remove the old animation from our object
-                document.getElementById('dogeInner').style.webkitAnimationName = "none";
-        
-                // call the change method, which will update the keyframe animation
-                setTimeout(function(){change("rotate");}, 0);
-                console.log("Starting new animation proccess");
+            else if($('#faster').is(':checked') && prevent) { // This happens if the box is checked
+                prevent = false; // Prevent this if from happening directly after
+                var el = $(this),
+                   newOne = el.clone(true).css({'animation':'rotate 0.1s linear infinite'}); // Make a clone of the element so the animation can be restarted. See http://css-tricks.com/restart-css-animation/ for full info   
+                el.before(newOne);
+                $("." + el.attr("class") + ":last").remove(); // Remove old element
+                rotates = $('.rotate');// Update list of `rotate`s
+                listen(); // Apply listeners again
             }
-
-            // get a random number integer between two low/high extremes
-            function randomFromTo(from, to) {
-                return Math.floor(Math.random() * (to - from + 1) + from);
-            }
-
-            $(function() {
-                $('dogeInner').bind('click',function(e) {
-                e.preventDefault();
-                startChange();       
-                console.log("Attempting animation speed change");
-                });        
-            });
+        });
+    }
+}
+listen(); // Apply listeners
     </script>
     <script>
         /* Title Changing */
@@ -628,10 +601,12 @@
 
     <div id="dogeOuter">
         <div id="dogeEmbed">
-            <img id="dogeInner" src="image/wowintensifies.gif" alt="Wow">
+            <img class='rotate' src="image/wowintensifies.gif" alt="Wow">
         </div>
     </div>
 
+<input type='checkbox' checked='false' id='faster' />
+    
 </body>
 
 </html>
