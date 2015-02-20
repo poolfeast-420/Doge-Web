@@ -11,18 +11,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="icon" type="image/png" href="image/doge-head.ico">
     <script src="js/jquery-1.11.1.min.js"></script>
-    <script src="js/screenfull.min.js"></script>
-    <script src="js/soundmanager2-nodebug-jsmin.js"></script>
     <style>
         /* Containers */
             
             body, html {
                 font-family: "Comic Sans MS", "Comic Sans";
                 overflow: hidden;
-            }
-        
-            body {
-                position: relative;    
             }
         
             #dogeOuter {
@@ -80,14 +74,18 @@
              }
         
             #wow {
-                position: absolute;
-                top: 0;
-                background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+                background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
                 color: transparent;
                 -webkit-background-clip: text;
                 font-family: Comic Sans, Comic Sans MS;
-                -webkit-animation: animatedBackground 1s linear infinite, marquee 4s linear infinite;
-                background-size: 20%;    
+                -webkit-animation: animatedBackground 1s linear infinite, marquee 5s linear infinite;
+                background-size: 20%; 
+                font-size: 50vw;
+                z-index: 100;
+                position: fixed;
+                top: calc(50% - 420px);
+                margin: 0;
+                padding: 0;
             }
 
             /* KEYFRAMES */
@@ -250,41 +248,6 @@
             $(document).bind("keydown keyup mousedown mousewheel touchstart touchmove scroll DOMMouseScroll", watch);
     </script>
     <script>
-        /* Commence Groove */
-            
-            soundManager.setup({
-                url: 'swf/',
-                onready: function() {
-                  var s = soundManager.createSound({
-                    id: 'Groove',
-                    url: 'audio/PORNOGROOVE.mp3'
-                });
-                    s.play({loops: 3});
-                    console.log("Attempting to Play Groove");
-            },
-            });
-    </script>
-    <script>
-        /* Animation Speed Increaser */
-            var speedCounter = 0    
-        
-            function intensification() {
-                var elements = ['dogeOuter', 'dogeEmbed', 'dogeInner'];
-                var browserPrefixes = ['-webkit-', '-moz-', '-o-']
-                var lastSheet = document.styleSheets[document.styleSheets.length - 1];
-                
-                lastSheet.insertRule("@-webkit-keyframes " + newName + " { from { top: 0px; } to {top: " + newHeight + "px;} }", lastSheet.cssRules.length);
-                for(i = 0; i < elements.length; i++) {
-                    document.getElementById(elements[i]).style.webkitAnimationName = increased;
-                    
-                    (browserPrefixes[i] + "animation")
-                }
-                fadebg();
-                setTimeout(function(){intensification();}, 5000);
-            }
-            setTimeout(function(){intensification();}, 5000);
-    </script>
-    <script>
         /* Background Fading Effect */
             var fade_effect = 2
         
@@ -442,61 +405,6 @@
                 }
             }
     </script>
-    <script>
-        /* Sets a random height for wows on the page */
-            
-            function randomHeight() {
-                var wows = document.getElementsByClassName('wowtext');
-                
-                for(var i = 0; i<wows.length; i++) {
-                    var random = Math.floor(Math.random() * 100) + 1;
-                    random = random + "%";
-                    wows[i].style.top = random;
-                }
-                
-                setTimeout(function() {
-                    randomHeight('wowtext');
-                }, 3000);
-            }
-            
-            var wowCallCount = 0;
-            
-            function allTheWows() {
-                var maxWows = 15;
-                wowCallCount++;
-                
-                if(wowCallCount > maxWows) {
-                    window.clearInterval(wowInterval);
-                } else {
-                    var container = document.getElementById('wowContainer');
-                    var wowID = "wowtext" + wowCallCount;
-                    var speed = Math.floor(Math.random() * (8 - 4 + 1)) + 4;
-
-                    container.innerHTML = container.innerHTML + "<p class=\"wowtext\" id=\"" + wowID + "\">Wow<\/p>";
-                    var wowtext = document.getElementById(wowID);
-                    wowtext.style.setProperty("animation", "marquee-left " + speed + " infinite linear");
-                    wowtext.style.setProperty("-webkit-animation", "marquee-left " + speed + " infinite linear");
-
-                    /* Yeah, I fucked shit up. I'll try to fix it ASAP. For now, no rainbows.*/
-                    var wowtext = document.getElementById(wowID);
-                    var myRainbowSpan = new RainbowSpan2(wowtext, 0, 360, 255, 50, 18);
-                    myRainbowSpan2.timer = window.setInterval("myRainbowSpan2.moveRainbow()", myRainbowSpan2.speed);
-                }
-            }
-            
-            var wowInterval;
-            function start() {
-                if (browserok) {
-                    setrandomcolor();
-                    setTimeout(function() {
-                        randomHeight();
-                    }, 10000);
-                }
-            }
-            
-            window.onload = start;
-    </script>
-
 </head>
 
 <body>
