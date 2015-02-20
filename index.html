@@ -74,9 +74,23 @@
                 -o-animation: spin 3s infinite 13s linear;
                 animation: spin 3s infinite 13s linear;
              }
+        
+            #wow {
+                background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+                color: transparent;
+                -webkit-background-clip: text;
+                font-family: Comic Sans, Comic Sans MS;
+                -webkit-animation: animatedBackground 1s linear infinite, marquee 4s no-repeat forwards;
+                background-size: 20%;    
+            }
 
             /* KEYFRAMES */
         
+            @-webkit-keyframes animatedBackground {
+                from { background-position: 0 0; }
+                to { background-position: 100% 0; }
+            }
+            
             @-webkit-keyframes fadein {
                 0% { opacity:0; }
                 100% { opacity:1; }
@@ -479,6 +493,10 @@
 
 </head>
 
+<template id="wow">
+    <div>wow</div>
+</template>
+    
 <body>
 
     <div id="dogeOuter">
