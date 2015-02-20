@@ -21,6 +21,10 @@
                 overflow: hidden;
             }
         
+            body {
+                position: relative;    
+            }
+        
             #dogeOuter {
                 display: table;
                 position: absolute;
@@ -76,11 +80,13 @@
              }
         
             #wow {
+                position: absolute;
+                top: 0;
                 background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
                 color: transparent;
                 -webkit-background-clip: text;
                 font-family: Comic Sans, Comic Sans MS;
-                -webkit-animation: animatedBackground 1s linear infinite, marquee 4s no-repeat forwards;
+                -webkit-animation: animatedBackground 1s linear infinite, marquee 4s linear infinite;
                 background-size: 20%;    
             }
 
