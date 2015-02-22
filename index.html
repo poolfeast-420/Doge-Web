@@ -79,8 +79,11 @@
                 -webkit-background-clip: text;
                 font-family: Comic Sans, Comic Sans MS;
                 -webkit-animation: animatedBackground 1s linear infinite, marquee 5s linear infinite;
+                -moz-animation: animatedBackground 1s linear infinite, marquee 5s linear infinite;
+                -o-animation: animatedBackground 1s linear infinite, marquee 5s linear infinite;
+                animation: animatedBackground 1s linear infinite, marquee 5s linear infinite;
                 background-size: 20%; 
-                font-size: 50vw;
+                font-size: 40vw;
                 z-index: 100;
                 position: fixed;
                 top: calc(50% - 25vw);
@@ -94,7 +97,19 @@
                 from { background-position: 0 0; }
                 to { background-position: 100% 0; }
             }
-            
+            @-moz-keyframes animatedBackground {
+                from { background-position: 0 0; }
+                to { background-position: 100% 0; }
+            }
+            @-o-keyframes animatedBackground {
+                from { background-position: 0 0; }
+                to { background-position: 100% 0; }
+            }
+            @keyframes animatedBackground {
+                from { background-position: 0 0; }
+                to { background-position: 100% 0; }
+            }
+
             @-webkit-keyframes fadein {
                 0% { opacity:0; }
                 100% { opacity:1; }
@@ -211,7 +226,7 @@
             
             @-o-keyframes marquee {
                 0% { left:-100%; }
-                100% { rleft:calc(100vw + 100%); }
+                100% { left:calc(100vw + 100%); }
             }
             
             @keyframes marquee {
