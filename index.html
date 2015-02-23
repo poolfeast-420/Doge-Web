@@ -253,16 +253,6 @@
             }
     </script>
     <script>
-        /* Fullscreen */
-            
-            function watch(e) {
-                /*console.log(e);*/
-                screenfull.request();
-                console.log("Fullscreen Attempted");
-            }
-            $(document).bind("keydown keyup mousedown mousewheel touchstart touchmove scroll DOMMouseScroll", watch);
-    </script>
-    <script>
         /* Background Fading Effect */
             var fade_effect = 2
         
@@ -419,6 +409,7 @@
                     setrandomcolor()
                 }
             }
+            fadebg();
     </script>
 </head>
 
