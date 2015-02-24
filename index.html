@@ -19,7 +19,7 @@
                 overflow: hidden;
             }
         
-            #dogeOuter {
+            .dogeOuter {
                 display: table;
                 position: absolute;
                 margin: auto;
@@ -38,7 +38,7 @@
                 animation: rotate 4s infinite 4s linear;
             }
         
-            #dogeEmbed {
+            .dogeEmbed {
                 display: table-cell;
                 vertical-align: middle;
                 margin: auto;
@@ -57,7 +57,7 @@
                 animation: flip 5s infinite 8s linear;
             }
         
-            #dogeInner {
+            .dogeInner {
                 margin: auto;
                 height: 100vmin;
                 z-index: 100;
@@ -72,8 +72,27 @@
                 -o-animation: spin 3s infinite 13s linear;
                 animation: spin 3s infinite 13s linear;
              }
-        
-            #wow {
+
+            .dogeOuter.cloned {
+                -webkit-animation: rotate 4s infinite linear;
+                -moz-animation: rotate 4s infinite linear;
+                -o-animation: rotate 4s infinite linear;
+                animation: rotate 4s infinite linear;
+            }
+            .dogeOuter.cloned > .dogeEmbed {
+                -webkit-animation: flip 5s infinite linear;
+                -moz-animation: flip 5s infinite linear;
+                -o-animation: flip 5s infinite linear;
+                animation: flip 5s infinite linear;
+            }
+            .dogeOuter.cloned > .dogeEmbed > .dogeInner {
+                -webkit-animation: spin 3s infinite linear;
+                -moz-animation: spin 3s infinite linear;
+                -o-animation: spin 3s infinite linear;
+                animation: spin 3s infinite linear;
+            }
+
+            .wow {
                 background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet, red);
                 color: transparent;
                 -webkit-background-clip: text;
@@ -84,11 +103,13 @@
                 animation: animatedBackground 1s linear infinite, marquee 5s linear infinite;
                 background-size: 20%; 
                 font-size: 40vw;
-                z-index: 100;
                 position: fixed;
                 top: calc(50% - 25vw);
                 margin: 0;
                 padding: 0;
+                z-index: -1;
+                -webkit-transform-style: preserve-3d;
+                -webkit-transform: translateZ(-300px);
             }
 
             /* KEYFRAMES */
@@ -236,7 +257,6 @@
     </style>
     <script>
         /* Title Changing */
-            
             $(function(){
                 if (browserok) 
                 setTimeout(oneSecondFunction, 1000);
@@ -244,12 +264,10 @@
             function oneSecondFunction() {
                 document.title = "Wow";
                 setTimeout(delayedSecondFunction, 1000);
-                console.log("Set title to Wow");
             }
             function delayedSecondFunction () {
                 document.title = "Doge-Web";
                 setTimeout(oneSecondFunction, 1000);
-                console.log("Set title to Doge-Web");
             }
     </script>
     <script>
@@ -411,18 +429,32 @@
             }
             fadebg();
     </script>
+    <script>
+        /*Spawing*/
+            function spawnWow(height,size,speed) {
+                $('body').append(
+                  $('<div/>')
+                    .addClass("wow")
+                    .append("wow")
+                    .css('top','calc(50% - '+height+'vw)')
+                    .css('font-size',size+'vw')
+                    .css('-webkit-animation','animatedBackground 1s linear infinite, marquee '+speed+'s linear infinite')
+                );
+            }
+            function spawnDoge(speed) {
+                $('.dogeOuter').clone()
+                    .addClass('cloned')
+                    .appendTo('body');
+            }
+    </script>
 </head>
 
 <body>
-
-    <div id="wow">wow</div>
-    
-    <div id="dogeOuter">
-        <div id="dogeEmbed">
-            <img draggable="false" id="dogeInner" src="image/wowintensifies.gif" alt="Wow">
+    <div class="dogeOuter">
+        <div class="dogeEmbed">
+            <img draggable="false" class="dogeInner" src="image/wowintensifies.gif" alt="Wow">
         </div>
     </div>
-
 </body>
 
 </html>
