@@ -429,15 +429,15 @@
     <script>
         /*Timing*/
         
-        function createWows() {
-            for(var i = 0; i < 1; i++) {
-                spawnWow(getRand(0, 100), getRand(0, 100), getRand(0, 100));
-            }
+        function Wows() {
+            var parralax = getRand(0, 100);
+            spawnWow(getRand(0, 100), parralax, 50/parralax;
         }
     
         $(document).ready(function() {
             fadebg();
-            setInterval(function() { createWows();fadebg();spawnDoge(); }, 3000);
+            Wows();
+            setInterval(function() { Wows();fadebg();spawnDoge(); }, 10000);
         });
     
         function getRand(min, max) {
