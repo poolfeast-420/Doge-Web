@@ -430,14 +430,14 @@
         /*Timing*/
         
         function createWows() {
-            for(var i = 0; i < 5; i++) {
+            for(var i = 0; i < 1; i++) {
                 spawnWow(getRand(0, 100), getRand(0, 100), getRand(0, 100));
             }
         }
     
         $(document).ready(function() {
             fadebg();
-            setInterval(function() { createWows();fadebg();spawnDoge(); }, 5000);
+            setInterval(function() { createWows();fadebg();spawnDoge(); }, 3000);
         });
     
         function getRand(min, max) {
