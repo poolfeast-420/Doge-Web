@@ -410,7 +410,7 @@
     /*Spawing*/
         function spawnWow(height,size,speed) {
             size = size/2;
-            speed = 1/speed;
+            speed = 20/speed;
             $('body').append(
               $('<div/>')
                 .addClass("wow")
@@ -431,7 +431,7 @@
         
         function createWows() {
             for(var i = 0; i < 5; i++) {
-                spawnWow(getRand(0, 100), getRand(0, 100), getRand(1, 20));
+                spawnWow(getRand(0, 100), getRand(0, 100), getRand(0, 100));
             }
         }
     
