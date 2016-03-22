@@ -425,6 +425,11 @@
                 .addClass('cloned')
                 .appendTo('body');
         }
+        function spawnPorn() {
+            $('audio').clone()
+                .addClass('cloned')
+                .appendTo('head');
+        }
     </script>
     <script>
         /*Timing*/
@@ -436,7 +441,7 @@
     
         $(document).ready(function() {
             fadebg();
-            setInterval(function() { Wows();fadebg();spawnDoge(); }, 15696);
+            setInterval(function() { Wows();fadebg();spawnDoge();spawnPorn(); }, 15696);
         });
     
         function getRand(min, max) {
