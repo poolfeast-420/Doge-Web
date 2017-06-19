@@ -434,14 +434,16 @@
     <script>
         /*Timing*/
         
-        function Wows() {
+        function Wows(amount) {
             var parralax = getRand(0, 30);
-            spawnWow(getRand(35, 100), 100/parralax, parralax);
+            for (i = 0; i < amount; i++) { 
+                spawnWow(getRand(35, 100), 100/parralax, parralax);
+            }
         }
     
         $(document).ready(function() {
             fadebg();
-            setInterval(function() { Wows();fadebg();spawnDoge();spawnPorn(); }, 15696);
+            setInterval(function() { Wows(5);fadebg();spawnDoge();spawnPorn(); }, 15696);
         });
     
         function getRand(min, max) {
